@@ -1,33 +1,20 @@
 import React from "react";
-import { Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Browse from "./pages/Browse";
 import Chat from "./pages/Chat";
-import Page404 from "./pages/Page404";
+// import Page404 from "./pages/Page404";
 
 function App() {
   return (
     <div className="App">
       <Router>
-        <div>
-          <Navbar />
-          <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route exact path="/browse">
-              <Browse />
-            </Route>
-            <Route exact path="/chat">
-              <Chat />
-            </Route>
-            <Route>
-              <Page404 />
-            </Route>
-          </Switch>
-        </div>
+        <Navbar />
+        <Route exact path="/" component={Home} />
+        <Route exact path="/browse" component={Browse} />
+        <Route exact path="/chat" component={Chat} />
       </Router>
     </div>
   );
