@@ -1,0 +1,25 @@
+{
+  "name": "lilypad",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^2.0.0",
+    "v-response": "^1.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MikChanna/Lilypad.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MikChanna/Lilypad/issues"
+  },
+  "homepage": "https://github.com/MikChanna/Lilypad#readme"
+}
