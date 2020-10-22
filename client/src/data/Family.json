@@ -1,0 +1,20 @@
+[
+  {
+    "id": 0,
+    "lastName": "Kerr",
+    "motherFirstName": "Debbie",
+    "fatherFirstName": "John",
+    "emergencyNumber": 1234567890,
+    "email": "kerrfamily@gmail.com",
+    "address": "123 Main St, Richmond VA 23222"
+  },
+  {
+    "id": 1,
+    "lastName": "Smith",
+    "motherFirstName": "Susan",
+    "fatherFirstName": "Chris",
+    "emergencyNumber": 2492910289,
+    "email": "chrisandsusan@gmail.com",
+    "address": "3214 Cherry Dr, Glen Allen VA 23060"
+  }
+]

@@ -1,0 +1,29 @@
+[
+  {
+    "id": 0,
+    "firstName": "Sarah",
+    "family": 0,
+    "allergies": "nuts",
+    "bedtime": "9pm",
+    "favoriteFood": "chocolate",
+    "favoriteActivity": "hide and seek"
+  },
+  {
+    "id": 1,
+    "firstName": "David",
+    "family": 0,
+    "allergies": "dairy",
+    "bedtime": "10pm",
+    "favoriteFood": "cheerios",
+    "favoriteActivity": "basketball"
+  },
+  {
+    "id": 2,
+    "firstName": "Tyler",
+    "family": 1,
+    "allergies": "",
+    "bedtime": "8:30pm",
+    "favoriteFood": "macaroni and cheese",
+    "favoriteActivity": "chess"
+  }
+]
