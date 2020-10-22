@@ -5,6 +5,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/lilypad");
 
 const childSeed = [
   {
+    id: 0,
     firstName: "Sarah",
     family: 1,
     allergies: "nuts",
@@ -16,6 +17,7 @@ const childSeed = [
 
 const familySeed = [
   {
+    id: 0,
     lastName: "Kerr",
     motherFirstName: "Debbie",
     fatherFirstName: "John",
