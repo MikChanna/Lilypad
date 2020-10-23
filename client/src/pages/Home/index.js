@@ -1,17 +1,22 @@
 import React, { Component } from "react";
-// import families from "../../data/Family.json";
-// import children from "../../data/Child.json";
+import children from "../../data/Child.json";
+import families from "../../data/Family.json";
+import Table from "../../components/Table";
 
-function Home() {
-  //   state = {
-  //     families,
-  //   };
+class Home extends Component {
+  state = {
+    families,
+    children,
+  };
 
-  return (
-    <div>
-      <h1>Home page! </h1>
-    </div>
-  );
+  render() {
+    return (
+      <div>
+        <h1>Welcome to the ____ family! </h1>
+        <Table children={children} />
+      </div>
+    );
+  }
 }
 
 export default Home;
