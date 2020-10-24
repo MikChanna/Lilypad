@@ -14,7 +14,6 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <h1>Welcome to the ____ family! </h1>
         <ChildData children={children} />
       </div>
     );
