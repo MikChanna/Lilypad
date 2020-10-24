@@ -5,7 +5,6 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Browse from "./pages/Browse";
 import Chat from "./pages/Chat";
-// import Page404 from "./pages/Page404";
 
 function App() {
   return (
