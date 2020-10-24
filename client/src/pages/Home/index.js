@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import children from "../../data/Child.json";
 import families from "../../data/Family.json";
-import Table from "../../components/Table";
+// import Table from "../../components/Table";
+import ChildData from "../../components/ChildData";
 
 class Home extends Component {
   state = {
@@ -13,7 +14,7 @@ class Home extends Component {
     return (
       <div>
         <h1>Welcome to the ____ family! </h1>
-        <Table children={children} />
+        <ChildData children={children} />
       </div>
     );
   }

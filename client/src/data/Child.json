@@ -6,7 +6,8 @@
     "allergies": "nuts",
     "bedtime": "9pm",
     "favoriteFood": "chocolate",
-    "favoriteActivity": "hide and seek"
+    "favoriteActivity": "hide and seek",
+    "image": "girl_darkhair.png"
   },
   {
     "id": 1,
@@ -15,7 +16,8 @@
     "allergies": "dairy",
     "bedtime": "10pm",
     "favoriteFood": "cheerios",
-    "favoriteActivity": "basketball"
+    "favoriteActivity": "basketball",
+    "image": "boy_darkhair.png"
   },
   {
     "id": 2,
@@ -24,6 +26,7 @@
     "allergies": "",
     "bedtime": "8:30pm",
     "favoriteFood": "macaroni and cheese",
-    "favoriteActivity": "chess"
+    "favoriteActivity": "chess",
+    "image": "boy_blondhair.png"
   }
 ]
