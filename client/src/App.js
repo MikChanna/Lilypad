@@ -11,9 +11,11 @@ function App() {
     <div className="App">
       <Router>
         <Navbar />
-        <Route exact path="/" component={Home} />
-        <Route exact path="/browse" component={Browse} />
-        <Route exact path="/chat" component={Chat} />
+        <div className="ui container">
+          <Route exact path="/" component={Home} />
+          <Route exact path="/browse" component={Browse} />
+          <Route exact path="/chat" component={Chat} />
+        </div>
       </Router>
     </div>
   );
