@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       <Router>
         <Navbar />
-        <div class="ui container">
+        <div className="ui container">
           <Route exact path="/" component={Home} />
           <Route exact path="/browse" component={Browse} />
           <Route exact path="/chat" component={Chat} />

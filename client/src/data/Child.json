@@ -23,7 +23,7 @@
     "id": 2,
     "firstName": "Tyler",
     "family": 1,
-    "allergies": "",
+    "allergies": "No allergies!",
     "bedtime": "8:30pm",
     "favoriteFood": "macaroni and cheese",
     "favoriteActivity": "chess",

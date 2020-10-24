@@ -9,9 +9,9 @@ class ChildData extends Component {
 
   render() {
     return (
-      <div className="ui equal width grid">
+      <div className="ui equal width relaxed grid">
         {this.state.children.map((child) => (
-          <div>
+          <div key={child.id}>
             <h2 className="ui header">
               <img
                 src={avatarDirectory + child.image}
