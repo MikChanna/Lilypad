@@ -26,20 +26,14 @@ export default class Search extends React.Component {
 
   render() {
     return (
-      <div className="ui container" style={{ marginTop: "iem" }}>
+      <div className="ui container">
         <Searchbar handleFormSubmit={this.handleSubmit} />
-        <div className="ui grid">
-          <div className="ui row">
-            <div className="eleven wide column">
-              <VideoDetail video={this.state.selectedVideo} />
-            </div>
-            <div className="five wide column">
-              <VideoList
-                handleVideoSelect={this.handleVideoSelect}
-                videos={this.state.videos}
-              />
-            </div>
-          </div>
+        <VideoDetail video={this.state.selectedVideo} />
+        <div className="four wide column">
+          <VideoList
+            handleVideoSelect={this.handleVideoSelect}
+            videos={this.state.videos}
+          />
         </div>
       </div>
     );
