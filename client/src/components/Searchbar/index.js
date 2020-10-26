@@ -2,7 +2,7 @@ import React from "react";
 
 export default class Searchbar extends React.Component {
   state = {
-    term: "Default text",
+    term: "",
   };
 
   handleChange = (event) => {
