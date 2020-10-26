@@ -1,6 +1,6 @@
 import React from "react";
 
-class Searchbar extends React.Component {
+export default class Searchbar extends React.Component {
   state = {
     term: "Default text",
   };
@@ -34,5 +34,3 @@ class Searchbar extends React.Component {
     );
   }
 }
-
-export default Searchbar;
