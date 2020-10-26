@@ -26,7 +26,7 @@ export default class Search extends React.Component {
 
   render() {
     return (
-      <div className="ui container">
+      <div className="ui container" style={{ marginTop: "iem" }}>
         <Searchbar handleFormSubmit={this.handleSubmit} />
         <div className="ui grid">
           <div className="ui row">
