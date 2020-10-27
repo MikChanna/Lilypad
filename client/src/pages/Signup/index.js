@@ -6,15 +6,7 @@ import API from "../../utils/API"
 
 function Signup () {
 
-  // const [userObject, setUserObject] = useState({})
-
-  // window.onload=function(){
-// Getting references to our form and input
-
-  // var emailInput = document.querySelector("#email-input");
-  // var passwordInput = document.querySelector("#password-input");
-
-    const [userObject, setUserObject] = useState({email:"", password:""});
+  const [userObject, setUserObject] = useState({email:"", password:""});
 
   function handleInputChange(event) {
       const { name, value } = event.target;
