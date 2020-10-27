@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Input, Menu } from "semantic-ui-react";
+import { Menu } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 var avatarDirectory = process.env.PUBLIC_URL + "/assets/images/";
 var imageStyle = {
@@ -19,7 +19,17 @@ export default class Navbar extends Component {
 
     return (
       <div>
+        
+
         <Menu pointing>
+        <Menu.Menu position="left">
+            <Menu.Item>
+            <img src={avatarDirectory + "water-lily.png"} className="waterlily" alt="waterlily" style={imageStyle}/>
+              <h2>Lilypad</h2>
+             
+            </Menu.Item>
+          </Menu.Menu>
+          
           <Menu.Item
             as={Link}
             name="home"
@@ -41,9 +51,11 @@ export default class Navbar extends Component {
             active={activeItem === "chat"}
             onClick={this.handleItemClick}
           />
+          
+
           <Menu.Menu position="right">
             <Menu.Item>
-              Add Child<a href = "../../pages/AddChild"><img src={avatarDirectory + "plus.png"} className="plus" alt="plusSign" style={imageStyle}/></a>
+              Add Child<a href = "/addchild"><img src={avatarDirectory + "plus.png"} className="plus" alt="plusSign" style={imageStyle}/></a>
             </Menu.Item>
           </Menu.Menu>
         </Menu>

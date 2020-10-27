@@ -8,6 +8,7 @@ import Chat from "./pages/Chat";
 import Signup from "./pages/Signup"
 import Login from "./pages/Login";
 import AddChild from "./pages/AddChild";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route exact path="/login" component={Login} />
           <Route exact path="/addchild" component={AddChild} />
         </div>
+        <Footer/>
       </Router>
     </div>
   );
