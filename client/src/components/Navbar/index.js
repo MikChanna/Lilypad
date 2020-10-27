@@ -12,7 +12,8 @@ export default class Navbar extends Component {
 
     return (
       <div>
-        <Menu pointing>
+        <Menu pointing stackable>
+          <Menu.Item>LOGO</Menu.Item>
           <Menu.Item
             as={Link}
             name="home"
