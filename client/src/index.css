@@ -17,3 +17,19 @@ h1 {
   padding-top: 20px;
   color: #5e9424;
 }
+
+.embeddedVideo {
+  margin: 30px;
+}
+
+.videoListItem {
+  padding: 5px;
+}
+
+.videoImage {
+  padding: 10px;
+}
+
+.search-bar {
+  margin-bottom: 30px;
+}
