@@ -5,7 +5,7 @@ export default {
     saveChild: function (childData){
         return axios.post("/api/child", childData)
     },
-    getChild: function(){
+    getChild: function(id){
         return axios.get("/api/child" + id)
     }
 
