@@ -5,7 +5,6 @@ const VideoItem = ({ video, handleVideoSelect }) => {
     <div
       className="ui card video-item"
       onClick={() => handleVideoSelect(video)}
-      className="video-item ui card"
     >
       <div className="ui slide masked reveal image">
         <img
@@ -14,8 +13,8 @@ const VideoItem = ({ video, handleVideoSelect }) => {
           className="videoImage visible content ui image"
         />
       </div>
-      <div className="content">
-        <a>{video.snippet.title.slice(0, 25)}</a>
+      <div className="content" onClick={() => handleVideoSelect(video)}>
+        <h5>{video.snippet.title.slice(0, 25)}</h5>
       </div>
     </div>
   );

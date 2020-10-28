@@ -3,8 +3,8 @@ import "./style.css";
 
 function Footer() {
   return (
-    <div class="ui vertical footer segment">
-      <div class="ui container">
+    <div className="ui vertical footer segment">
+      <div className="ui container">
         <hr />
         Icons made by{" "}
         <a href="https://www.flaticon.local/authors/freepik" title="Freepik">

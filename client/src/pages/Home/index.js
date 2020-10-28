@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import ChildData from "../../components/ChildData";
+import SeasonalVids from "../../components/SeasonalVids";
 
 //eventually replace with API call to specific family data of whoever is logged in
 import children from "../../data/Child.json";
 import families from "../../data/Family.json";
-// import SeasonalVids from "../../components/SeasonalVids";
 
 class Home extends Component {
   state = {
@@ -16,7 +16,7 @@ class Home extends Component {
     return (
       <div>
         <ChildData children={children} />
-        {/* <SeasonalVids /> */}
+        <SeasonalVids />
       </div>
     );
   }
