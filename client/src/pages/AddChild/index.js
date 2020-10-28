@@ -1,4 +1,5 @@
 import React from "react";
+import BirthdayInput from "../../components/BirthdayInput"
 
 import "./style.css";
 
@@ -11,6 +12,7 @@ return <div>
             <label>First Name</label>
             <input type="text" name="firstName" placeholder="First Name"/>
         </div>
+        <BirthdayInput/>
         <div className="field">
             <label>Allergies</label>
             <input type="text" name="allergies" placeholder="Allergy Type"/>
