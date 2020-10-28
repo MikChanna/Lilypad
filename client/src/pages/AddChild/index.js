@@ -1,5 +1,4 @@
 import React from "react";
-import BirthdayInput from "../../components/BirthdayInput"
 import API from "../../utils/ChildAPI"
 import "./style.css";
 
