@@ -11,7 +11,7 @@ export default class SeasonalVids extends React.Component {
     month = new Date().getMonth(), 
   };
 
-  SeasonalSearchTerm = month => { 
+  SeasonalSearchTerm = (month) => { 
     switch(month) {
         case 1: 
             return "new years resolution kids activities"; 
@@ -54,7 +54,7 @@ export default class SeasonalVids extends React.Component {
       }
   }
 
-  SeasonalSearch = seasonalSearch => { 
+  SeasonalSearch = () => { 
     const response = await YoutubeAPI.get("/search", { 
         params: { 
             q: this.SeasonalSearchTerm()
