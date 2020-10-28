@@ -4,6 +4,7 @@ const db = require("../models");
 
 module.exports = {
 
+// create a child record
 createChild: function(req, res){
     console.log("reqbody", req.body)
     db.Child
@@ -22,14 +23,14 @@ createChild: function(req, res){
             res.status(401).json(err)
         });
 },
-
+// finds all the children
 findAll: function(req, res) {
     db.Child
     .find({})
     .then(dbModel => res.json(dbModel))
     .catch(err => res.status(422).json(err));
 },
-
+// finds the child by ID and updates
 update: function(req, res) {
     db.Child
       .findOneAndUpdate({ _id: req.params.id }, req.body)
