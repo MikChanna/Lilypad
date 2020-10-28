@@ -17,11 +17,11 @@ export default class SeasonalVids extends React.Component {
             return "new years resolution kids activities"; 
             break; 
         case 2:
-                return "valentines crafts"; 
-                break; 
+            return "valentines crafts"; 
+            break; 
           case 3:
-              return "st. patricks day kids activities"
-              break; 
+            return "st. patricks day kids activities"
+            break; 
           case 4:
             return "outdoor kids games"
             break; 
