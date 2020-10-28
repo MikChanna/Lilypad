@@ -1,20 +1,12 @@
 import React, {useState} from "react";
 import "./style.css";
-import API from "../../utils/API"
+import API from "../../utils/UserAPI"
 
 
 
 function Signup () {
 
-  // const [userObject, setUserObject] = useState({})
-
-  // window.onload=function(){
-// Getting references to our form and input
-
-  // var emailInput = document.querySelector("#email-input");
-  // var passwordInput = document.querySelector("#password-input");
-
-    const [userObject, setUserObject] = useState({});
+  const [userObject, setUserObject] = useState({email:"", password:""});
 
   function handleInputChange(event) {
       const { name, value } = event.target;
@@ -54,11 +46,11 @@ function Signup () {
         <form className = "ui form ">
             <div className = "field">
                 <label>Email Address</label>
-                <input onChange={handleInputChange} type = "text" name="email" placeholder = "Email Address" id="email-input" />
+                <input onChange={handleInputChange} value= {userObject.email} type = "text" name="email" placeholder = "Email Address" id="email-input" />
             </div>
             <div className = "field">
                 <label>Password</label>
-                <input onChange={handleInputChange} type = "password" name = "password" placeholder = "Password" id="password-input" />
+                <input onChange={handleInputChange} value={userObject.password} type = "password" name = "password" placeholder = "Password" id="password-input" />
             </div>
             <button onClick ={signUpUser} className="ui button signup" type="submit">Sign Up</button>
         </form>

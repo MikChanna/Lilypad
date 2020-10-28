@@ -12,6 +12,9 @@ const ChildSchema = Schema({
   lastName: {
     type: String,
   },
+  birthDate: {
+    type: Date,
+  },
   allergies: {
     type: Array,
   },

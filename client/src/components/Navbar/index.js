@@ -1,9 +1,16 @@
 import React, { Component } from "react";
-import { Input, Menu } from "semantic-ui-react";
+import { Menu } from "semantic-ui-react";
 import { Link } from "react-router-dom";
+var avatarDirectory = process.env.PUBLIC_URL + "/assets/images/";
+var imageStyle = {
+  padding:"5px",
+  width:"50px",
+  height:"50px"
+} 
 
 export default class Navbar extends Component {
   state = { activeItem: "home" };
+
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name });
 
@@ -12,8 +19,17 @@ export default class Navbar extends Component {
 
     return (
       <div>
-        <Menu pointing stackable>
-          <Menu.Item>LOGO</Menu.Item>
+        
+
+        <Menu pointing>
+        <Menu.Menu position="left">
+            <Menu.Item>
+            <img src={avatarDirectory + "water-lily.png"} className="waterlily" alt="waterlily" style={imageStyle}/>
+              <h2>Lilypad</h2>
+             
+            </Menu.Item>
+          </Menu.Menu>
+          
           <Menu.Item
             as={Link}
             name="home"
@@ -35,9 +51,11 @@ export default class Navbar extends Component {
             active={activeItem === "chat"}
             onClick={this.handleItemClick}
           />
+          
+
           <Menu.Menu position="right">
             <Menu.Item>
-              <Input icon="search" placeholder="Search..." />
+              Add Child<a href = "/addchild"><img src={avatarDirectory + "plus.png"} className="plus" alt="plusSign" style={imageStyle}/></a>
             </Menu.Item>
           </Menu.Menu>
         </Menu>

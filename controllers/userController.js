@@ -5,6 +5,7 @@ const db = require("../models");
 module.exports = {
  
   createUser: function(req, res) {
+    console.log("reqbody", req.body)
     db.User
       .create({
           email: req.body.email,
@@ -14,12 +15,13 @@ module.exports = {
           res.redirect(307, "/");
       })
       .catch(function(err) {
+          console.log("err", err)
           res.status(401).json(err)
       });
   },
   login: function(req, res) {
       passport.authenticate("local"), function(req, res) {
-          res.json(req.user);
+        res.redirect(307, "/");
       }
   },
   findUserData: function(req, res) {
