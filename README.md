@@ -10,6 +10,8 @@ Users can store information about each of their children, inluding: allergies, b
 
 Lilypad also includes an interface which parents and caregivers can use to chat and interact if issues or questions arise, as well as browse child-related content if they want to search for fun games to play, look up age-appropriate media, etc.
 
+A live application can be found at: nameless-ocean-53167.herokuapp.com
+
 # Usage
 
 This is a command-line application intended for interaction within the terminal. By running the command "npm node", the application prompts users with a series of questions, their answers to which will become the content of a well-structured README file for whatever project they are working on.
