@@ -1,7 +1,7 @@
 import React from "react";
 import YoutubeAPI from "../../utils/YoutubeAPI";
 import VideoList from "../VideoList";
-import { Grid } from "semantic-ui-react";
+import VideoDetail from "../VideoDetail";
 import moment from "moment";
 
 export default class SeasonalVids extends React.Component {
@@ -13,7 +13,6 @@ export default class SeasonalVids extends React.Component {
   };
 
   componentDidMount() {
-    // console.log(this.state.month);
     this.SeasonalSearch(this.state.month);
   }
 
@@ -32,43 +31,30 @@ export default class SeasonalVids extends React.Component {
   SeasonalSearchTerm = (month) => {
     switch (month) {
       case "1":
-        console.log(month);
         return "new years resolution kids activities";
       case "2":
-        console.log(month);
         return "valentines crafts";
       case "3":
-        console.log(month);
         return "st. patricks day kids activities";
       case "4":
-        console.log(month);
         return "outdoor kids games";
       case "5":
-        console.log(month);
         return "recipes for kids";
       case "6":
-        console.log(month);
         return "fun summer crafts";
       case "7":
-        console.log(month);
         return "summer activities for kids";
       case "8":
-        console.log(month);
         return "kids pool games";
       case "9":
-        console.log(month);
         return "back to school games";
       case "10":
-        console.log(month);
         return "halloween crafts";
       case "11":
-        console.log(month);
         return "thanksgiving recipes for kids";
       case "12":
-        console.log(month);
         return "christmas carols for kids";
       default:
-        console.log(month);
         return "kids activities";
     }
   };
@@ -84,14 +70,11 @@ export default class SeasonalVids extends React.Component {
           Wondering how to keep the kids entertained? Try these ideas, picked
           just for {this.state.fullMonth}.
         </h1>
-        <Grid className="searchResults">
-          <Grid.Column columns={3}>
-            <VideoList
-              handleVideoSelect={this.handleVideoSelect}
-              videos={this.state.videos}
-            />
-          </Grid.Column>
-        </Grid>
+        <VideoDetail video={this.state.selectedVideo} />
+        <VideoList
+          handleVideoSelect={this.handleVideoSelect}
+          videos={this.state.videos}
+        />
       </div>
     );
   }
