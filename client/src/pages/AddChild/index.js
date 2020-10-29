@@ -20,7 +20,7 @@ console.log("save button clicked")
 console.log("calling API to create child");
 API.saveChild({
     firstName:childObject.firstName,
-    // birthDate: childObject.month + childObject.day + childObject.year,
+    // birthDate: stringify(childObject.month + childObject.day + childObject.year),
     allergies: childObject.allergies,
     bedtime: childObject.bedtime,
     favoriteFood: childObject.favoriteFood,

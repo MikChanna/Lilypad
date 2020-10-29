@@ -17,7 +17,6 @@ createChild: function(req, res){
             favoriteActivity: req.body.favoriteActivity
         })
         .then(dbModel=>res.json(dbModel))
-        .then (res.redirect("/"))
         .catch(function(err) {
             console.log("err", err)
             res.status(401).json(err)
