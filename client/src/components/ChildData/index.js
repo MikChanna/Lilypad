@@ -6,7 +6,7 @@ function ChildData(){
 
     const [childData, setChildData] = useState([]);
 
-    // loads child information and strores them with setChildData
+    // loads child information and stores them with setChildData
     useEffect(() => {
         loadChildData()
       }, [])

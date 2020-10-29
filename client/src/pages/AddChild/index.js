@@ -2,8 +2,10 @@ import React, {useState} from "react";
 import API from "../../utils/ChildAPI"
 import "./style.css";
 import moment from "moment";
+var avatarDirectory = process.env.PUBLIC_URL + "/assets/images/";
 
 function AddChild(){
+  
 
 const [childObject, setChildObject] = useState({firstName:"", month:"", day:"", year:"",allergies:"", bedtime:"", favoriteFood:"", favoriteActivity:""})
 
@@ -22,7 +24,7 @@ console.log("save button clicked")
 API.saveChild({
     firstName:childObject.firstName,
     birthDate: JSON.stringify(childObject.month + "/" + childObject.day),
-    age: moment(JSON.stringify(childObject.year + childObject.month + childObject.day), "YYYYMMDD").fromNow().slice(0,7),
+    age: moment(childObject.year + childObject.month + childObject.day, "YYYYMMDD").fromNow().slice(0,8),
     allergies: childObject.allergies,
     bedtime: childObject.bedtime,
     favoriteFood: childObject.favoriteFood,
@@ -42,6 +44,40 @@ return <div>
             <input onChange={handleInputChange} value={childObject.firstName} type="text" name="firstName" placeholder="First Name"/>
         </div>
         <div className="field">
+
+        <label >Select an avatar:</label>
+        <div className="inline fields">
+            <div className="field">
+            <div className="ui radio checkbox">
+                <input type="radio" name="avatar" tabindex="0" className="hidden"/>
+                <img src={avatarDirectory + "boy_blondhair.png"} alt="blondhair boy"/>
+            </div>
+            </div>
+            <div className="field">
+            <div className="ui radio checkbox">
+                <input type="radio" name="avatar" tabindex="0" className="hidden"/>
+                <img src={avatarDirectory + "boy_darkhair.png"} alt="darkhair boy"/>
+            </div>
+            </div>
+            <div className="field">
+            <div className="ui radio checkbox">
+                <input type="radio" name="avatar" tabindex="0" className="hidden"/>
+                <img src={avatarDirectory + "girl_blondhair.png"} alt="blondhair girl"/>
+            </div>
+            </div>
+            <div class="field">
+            <div class="ui radio checkbox">
+                <input type="radio" name="avatar" tabindex="0" class="hidden"/>
+                <img src={avatarDirectory + "girl_darkhair.png"} alt="darkhair girl"/>
+            </div>
+            </div>
+            <div class="field">
+            <div class="ui radio checkbox">
+                <input type="radio" name="avatar" tabindex="0" class="hidden"/>
+                <img src={avatarDirectory + "girl2_darkhair.png"} alt="darkhair girl2"/>
+            </div>
+            </div>
+        </div>
    
         <label>Birthdate</label>
         <div className="field">
@@ -127,4 +163,7 @@ return <div>
 }
 
 export default AddChild;
+
+
+  
 
