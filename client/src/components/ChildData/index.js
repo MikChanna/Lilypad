@@ -31,7 +31,7 @@ function ChildData(){
 
         <div className="stackable ui grid container childData">
         {childData.map(child => (
-    <div className="five wide column" key={child.id}>
+    <div className="five wide column" key={child._id}>
         <center>
         <h2 className="ui header">
             <img
@@ -43,6 +43,14 @@ function ChildData(){
         </h2>
 
         <div className="ui list">
+        <div className="item">
+            <div className="header">Birthday</div>
+            {child.birthDate}
+            </div>
+            <div className="item">
+            <div className="header">Age</div>
+            {child.age}
+            </div>
             <div className="item">
             <div className="header">Allergies</div>
             {child.allergies}
