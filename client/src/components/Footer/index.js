@@ -6,7 +6,11 @@ function Footer() {
     <div className="ui vertical footer segment">
       <div className="ui container">
         <hr />
-        Icons made by{" "}
+        Created by {""}{" "}
+        <a href="https://github.com/MikChanna">Channa Mik Carlson </a> and{" "}
+        <a href="https://github.com/skerr924">Sarah Kerr.</a>
+        <br />
+        Icons by{" "}
         <a href="https://www.flaticon.local/authors/freepik" title="Freepik">
           Freepik
         </a>{" "}
@@ -14,6 +18,12 @@ function Footer() {
         <a href="https://www.flaticon.local/" title="Flaticon">
           www.flaticon.local
         </a>
+        <br />
+        Avatars by{" "}
+        <a href="https://avataaars.com/" title="Freepik">
+          avataaars
+        </a>
+        .
       </div>
     </div>
   );

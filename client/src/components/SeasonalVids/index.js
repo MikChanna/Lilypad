@@ -2,6 +2,7 @@ import React from "react";
 import YoutubeAPI from "../../utils/YoutubeAPI";
 import VideoList from "../VideoList";
 import { Grid } from "semantic-ui-react";
+import VideoDetail from "../VideoDetail";
 import moment from "moment";
 
 export default class SeasonalVids extends React.Component {
@@ -13,7 +14,6 @@ export default class SeasonalVids extends React.Component {
   };
 
   componentDidMount() {
-    // console.log(this.state.month);
     this.SeasonalSearch(this.state.month);
   }
 
@@ -84,7 +84,8 @@ export default class SeasonalVids extends React.Component {
           Wondering how to keep the kids entertained? Try these ideas, picked
           just for {this.state.fullMonth}.
         </h1>
-        <Grid className="searchResults">
+        <VideoDetail video={this.state.selectedVideo} />
+        <Grid className="searchResults relaxed">
           <Grid.Column columns={3}>
             <VideoList
               handleVideoSelect={this.handleVideoSelect}
