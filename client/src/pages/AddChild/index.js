@@ -17,12 +17,11 @@ function createChild(event) {
 event.preventDefault();
 console.log("save button clicked")
 
-const age = moment(JSON.stringify(childObject.year + childObject.month + childObject.day), "YYYYMMDD").fromNow();
-console.log(age);
 
 API.saveChild({
     firstName:childObject.firstName,
     birthDate: JSON.stringify(childObject.month + "/" + childObject.day),
+    age: moment(JSON.stringify(childObject.year + childObject.month + childObject.day), "YYYYMMDD").fromNow(),
     allergies: childObject.allergies,
     bedtime: childObject.bedtime,
     favoriteFood: childObject.favoriteFood,

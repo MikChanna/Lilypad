@@ -11,6 +11,7 @@ createChild: function(req, res){
         .create({
             firstName: req.body.firstName,
             birthDate: req.body.birthDate,
+            age: req.body.age,
             allergies: req.body.allergies,
             bedtime: req.body.bedtime,
             favoriteFood: req.body.favoriteFood,
