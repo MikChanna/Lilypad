@@ -1,5 +1,14 @@
-footer {
-  /* position: absolute; */
+.footer {
+  position: absolute;
   bottom: 0;
   width: 100%;
+}
+
+@media (min-height: 320px) {
+  .footer {
+    /* Increased specificity for SO snippet priority */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
 }
