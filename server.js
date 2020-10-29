@@ -12,10 +12,15 @@ const app = express();
 const routes = require("./routes");
 
 // mongoose connection
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/lilypad", {
-  useNewUrlParser: true,
-  useFindAndModify: false
-});
+mongoose.connect(
+  process.env.MONGODB_URI || 'mongodb://localhost/Lilypad',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+  }
+);
 
 // middleware
 app.use(bodyParser.urlencoded({ extended: true }));

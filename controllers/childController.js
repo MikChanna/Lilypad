@@ -13,11 +13,11 @@ createChild: function(req, res){
             birthDate: req.body.birthDate,
             allergies: req.body.allergies,
             bedtime: req.body.bedtime,
-            favoriteFood: req.body.food,
-            favoriteActivity: req.body.activity
+            favoriteFood: req.body.favoriteFood,
+            favoriteActivity: req.body.favoriteActivity
         })
         .then(dbModel=>res.json(dbModel))
-        .then (res.redirect(307, "/"))
+        .then (res.redirect("/"))
         .catch(function(err) {
             console.log("err", err)
             res.status(401).json(err)
