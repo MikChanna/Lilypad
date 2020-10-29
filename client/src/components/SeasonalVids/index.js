@@ -85,14 +85,10 @@ export default class SeasonalVids extends React.Component {
           just for {this.state.fullMonth}.
         </h1>
         <VideoDetail video={this.state.selectedVideo} />
-        <Grid className="searchResults relaxed">
-          <Grid.Column columns={3}>
-            <VideoList
-              handleVideoSelect={this.handleVideoSelect}
-              videos={this.state.videos}
-            />
-          </Grid.Column>
-        </Grid>
+        <VideoList
+          handleVideoSelect={this.handleVideoSelect}
+          videos={this.state.videos}
+        />
       </div>
     );
   }
