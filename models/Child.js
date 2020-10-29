@@ -9,11 +9,12 @@ const ChildSchema = Schema({
     type: Schema.Types.ObjectId,
     ref: "Family",
   },
-  lastName: {
-    type: String,
-  },
+ 
   birthDate: {
     type: String,
+  },
+  age: {
+    type:String,
   },
   allergies: {
     type: String,
