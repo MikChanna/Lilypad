@@ -3,7 +3,6 @@ import Searchbar from "../Searchbar";
 import YoutubeAPI from "../../utils/YoutubeAPI";
 import VideoList from "../VideoList";
 import VideoDetail from "../VideoDetail";
-import { Grid } from "semantic-ui-react";
 
 export default class Search extends React.Component {
   state = {
