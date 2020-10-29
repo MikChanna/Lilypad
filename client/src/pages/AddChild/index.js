@@ -28,7 +28,7 @@ API.saveChild({
 })
     // go back to homepage after adding child
     .then(function() {
-        alert("You created a profile for your child");
+        window.location.replace("/")
     })
     .catch(err => console.log(err));
 }
