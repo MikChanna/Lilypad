@@ -12,7 +12,7 @@ class ChildData extends Component {
       <div>
         <h1>Welcome to the ____ family! </h1>
 
-        <div className="stackable ui grid container">
+        <div className="stackable ui grid container childData">
           {this.state.children.map((child) => (
             <div className="five wide column" key={child.id}>
               <center>

@@ -9,6 +9,7 @@ export default class SeasonalVids extends React.Component {
     videos: [],
     selectedVideo: null,
     month: moment().format("M"),
+    fullMonth: moment().format("MMMM"),
   };
 
   componentDidMount() {
@@ -79,6 +80,10 @@ export default class SeasonalVids extends React.Component {
   render() {
     return (
       <div className="ui container">
+        <h1>
+          Wondering how to keep the kids entertained? Try these ideas, picked
+          just for {this.state.fullMonth}.
+        </h1>
         <Grid className="searchResults">
           <Grid.Column columns={3}>
             <VideoList
