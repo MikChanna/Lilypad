@@ -1,10 +1,11 @@
 import React, {useState} from "react";
 import API from "../../utils/ChildAPI"
 import "./style.css";
+import moment from "moment";
 
 function AddChild(){
 
-const [childObject, setChildObject] = useState({firstName:"",allergies:"", bedtime:"", favoriteFood:"", favoriteActivity:""})
+const [childObject, setChildObject] = useState({firstName:"", month:"", day:"", year:"",allergies:"", bedtime:"", favoriteFood:"", favoriteActivity:""})
 
 
 function handleInputChange(event){
@@ -16,11 +17,12 @@ function createChild(event) {
 event.preventDefault();
 console.log("save button clicked")
 
+const age = moment(JSON.stringify(childObject.year + childObject.month + childObject.day), "YYYYMMDD").fromNow();
+console.log(age);
 
-console.log("calling API to create child");
 API.saveChild({
     firstName:childObject.firstName,
-    // birthDate: stringify(childObject.month + childObject.day + childObject.year),
+    birthDate: JSON.stringify(childObject.month + "/" + childObject.day),
     allergies: childObject.allergies,
     bedtime: childObject.bedtime,
     favoriteFood: childObject.favoriteFood,
@@ -43,7 +45,7 @@ return <div>
    
         <label>Birthdate</label>
         <div className="field">
-            <select className="ui search dropdown" name="month">
+            <select onChange={handleInputChange} value={childObject.month} className="ui search dropdown" name="month">
                 <option value="">Month</option>
                 <option value="1">January</option>
                 <option value="2">February</option>
@@ -60,7 +62,7 @@ return <div>
             </select>
         </div>
         <div className="field">
-            <select className="ui search dropdown" name="day">
+            <select onChange={handleInputChange} value={childObject.day} className="ui search dropdown" name="day">
                 <option value="">Date</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -96,8 +98,8 @@ return <div>
             </select>
         </div>
         <div className="field">
-        <input type="text" name="year" maxLength="4" placeholder="Year"></input>
-        </div>
+        <input onChange={handleInputChange} value={childObject.year} type="text" name="year" maxLength="4" placeholder="Year"></input>
+        </div> 
 
     </div>
 
