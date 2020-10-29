@@ -54,8 +54,13 @@ export default class Navbar extends Component {
           
 
           <Menu.Menu position="right">
-            <Menu.Item>
-              Add Child<a href = "/addchild"><img src={avatarDirectory + "plus.png"} className="plus" alt="plusSign" style={imageStyle}/></a>
+            <Menu.Item
+            as={Link}
+            name="addChild"
+            to="/addChild"
+            active={activeItem === "addChild"}
+            onClick={this.handleItemClick}>
+              Add Child<img src={avatarDirectory + "plus.png"} className="plus" alt="plusSign" style={imageStyle}/>
             </Menu.Item>
           </Menu.Menu>
         </Menu>

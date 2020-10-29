@@ -1,28 +1,49 @@
-import React from "react";
+import React, {useState} from "react";
 import API from "../../utils/ChildAPI"
 import "./style.css";
 
 function AddChild(){
 
-// const [childObject, setChildObject] = useState({})
+const [childObject, setChildObject] = useState({firstName:"",allergies:"", bedtime:"", favoriteFood:"", favoriteActivity:""})
 
-// function handleInputChange(event){
-//     const {name, value} = event.target;
-//     setChildObject({...childObject, [name]: value})
-// }
 
+function handleInputChange(event){
+    const {name, value} = event.target;
+    setChildObject({...childObject, [name]: value})
+}
+
+function createChild(event) {
+event.preventDefault();
+console.log("save button clicked")
+
+
+console.log("calling API to create child");
+API.saveChild({
+    firstName:childObject.firstName,
+    // birthDate: childObject.month + childObject.day + childObject.year,
+    allergies: childObject.allergies,
+    bedtime: childObject.bedtime,
+    favoriteFood: childObject.favoriteFood,
+    favoriteActivity: childObject.favoriteActivity
+})
+    // go back to homepage after adding child
+    .then(function() {
+        alert("You created a profile for your child");
+    })
+    .catch(err => console.log(err));
+}
 return <div>
     <h1> Add a new child!</h1>
     <form className="ui form">
         <div className="field">
             <label>First Name</label>
-            <input type="text" name="firstName" placeholder="First Name"/>
+            <input onChange={handleInputChange} value={childObject.firstName} type="text" name="firstName" placeholder="First Name"/>
         </div>
         <div className="field">
    
         <label>Birthdate</label>
-        <div class="field">
-            <select class="ui search dropdown" name="birthMonth">
+        <div className="field">
+            <select className="ui search dropdown" name="month">
                 <option value="">Month</option>
                 <option value="1">January</option>
                 <option value="2">February</option>
@@ -38,8 +59,8 @@ return <div>
                 <option value="12">December</option>
             </select>
         </div>
-        <div class="field">
-            <select class="ui search dropdown" name="day">
+        <div className="field">
+            <select className="ui search dropdown" name="day">
                 <option value="">Date</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -73,30 +94,30 @@ return <div>
                 <option value="31">31</option>
             </select>
         </div>
-        <div class="field">
-        <input type="text" name="birthYear" maxlength="4" placeholder="Year"></input>
+        <div className="field">
+        <input type="text" name="year" maxLength="4" placeholder="Year"></input>
         </div>
 
     </div>
 
         <div className="field">
             <label>Allergies</label>
-            <input type="text" name="allergies" placeholder="Allergy Type"/>
+            <input onChange={handleInputChange} value={childObject.allergies} type="text" name="allergies" placeholder="Allergy Type"/>
         </div>
         <div className="field">
             <label>Bedtime</label>
-            <input type="text" name="bedtime" placeholder="9:00pm"/>
+            <input onChange={handleInputChange} value={childObject.bedtime} type="text" name="bedtime" placeholder="9:00pm"/>
         </div>
         <div className="field">
             <label>Favorite Food</label>
-            <input type="text" name="faveFood" placeholder="Name of Favorite Food"/>
+            <input onChange={handleInputChange} value={childObject.favoriteFood} type="text" name="favoriteFood" placeholder="Name of Favorite Food"/>
         </div>
         <div className="field">
             <label>Favorite Activity</label>
-            <input type="text" name="faveActivity" placeholder="Name of Favorite Activity"/>
+            <input onChange={handleInputChange} value={childObject.favoriteActivity} type="text" name="favoriteActivity" placeholder="Name of Favorite Activity"/>
         </div>
 
-    <button class="ui button" type="submit">Save Data</button>
+    <button onClick={createChild} className="ui button" type="submit">Save Data</button>
     </form>
 </div>
 

@@ -13,10 +13,10 @@ const ChildSchema = Schema({
     type: String,
   },
   birthDate: {
-    type: Date,
+    type: String,
   },
   allergies: {
-    type: Array,
+    type: String,
   },
   bedtime: {
     type: String,
