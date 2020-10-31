@@ -25,9 +25,9 @@ function ChildData() {
 
   return (
     <div>
-      <h1>Welcome to the ____ family! </h1>
+      <h1>Welcome to the ___ family! </h1>
 
-      <div className="ui link centered cards">
+      <div className="ui link stackable centered cards">
         {childData.map((child) => (
           <ChildItem key={child._id} data={child} />
         ))}

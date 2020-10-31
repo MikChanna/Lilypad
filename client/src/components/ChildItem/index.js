@@ -15,7 +15,7 @@ function ChildItem({ data }) {
         />
       </div>
       <div className="content">
-        <a className="header">{data.firstName}</a>
+        <span className="header">{data.firstName}</span>
         <div className="description">
           <div className="ui list">
             <div className="item">
