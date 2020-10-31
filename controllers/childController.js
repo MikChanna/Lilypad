@@ -15,7 +15,8 @@ createChild: function(req, res){
             allergies: req.body.allergies,
             bedtime: req.body.bedtime,
             favoriteFood: req.body.favoriteFood,
-            favoriteActivity: req.body.favoriteActivity
+            favoriteActivity: req.body.favoriteActivity,
+            image: req.body.image
         })
         .then(dbModel=>res.json(dbModel))
         .catch(function(err) {

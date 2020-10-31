@@ -7,13 +7,18 @@ var avatarDirectory = process.env.PUBLIC_URL + "/assets/images/";
 function AddChild(){
   
 
-const [childObject, setChildObject] = useState({firstName:"", month:"", day:"", year:"",allergies:"", bedtime:"", favoriteFood:"", favoriteActivity:""})
-
+const [childObject, setChildObject] = useState({firstName:"", month:"", day:"", year:"",allergies:"", bedtime:"", favoriteFood:"", favoriteActivity:"", image:""})
+const [radio,setRadio] = useState("boy_blondhair.png")
 
 function handleInputChange(event){
     const {name, value} = event.target;
+
+;
     setChildObject({...childObject, [name]: value})
+
 }
+
+
 
 function createChild(event) {
 event.preventDefault();
@@ -28,7 +33,9 @@ API.saveChild({
     allergies: childObject.allergies,
     bedtime: childObject.bedtime,
     favoriteFood: childObject.favoriteFood,
-    favoriteActivity: childObject.favoriteActivity
+    favoriteActivity: childObject.favoriteActivity,
+    image:radio
+
 })
     // go back to homepage after adding child
     .then(function() {
@@ -46,40 +53,41 @@ return <div>
         <div className="field">
 
         <label >Select an avatar:</label>
+        <h1> Radio button is :{radio}</h1>
         <div className="inline fields">
             <div className="field">
             <div className="ui radio checkbox">
-                <input type="radio" name="avatar" tabindex="0"/>
+                <input onChange={(e=>{setRadio(e.target.value)})} value="boy_blondhair.png" type="radio" checked={radio === "boy_blondhair.png"}/>
                 <label><img src={avatarDirectory + "boy_blondhair.png"} alt="blondhair boy"/></label>
                 
             </div>
             </div>
             <div className="field">
             <div className="ui radio checkbox">
-                <input type="radio" name="avatar" tabindex="0"/>
+            <input onChange={(e=>{setRadio(e.target.value)})} value="boy_darkhair.png" type="radio" checked={radio === "boy_darkhair.png"}/>
                 <label><img src={avatarDirectory + "boy_darkhair.png"} alt="darkhair boy"/></label>
             </div>
             </div>
             <div className="field">
             <div className="ui radio checkbox">
-                <input type="radio" name="avatar" tabindex="0" className="hidden"/>
+            <input onChange={(e=>{setRadio(e.target.value)})} value="girl_blondhair.png" type="radio" checked={radio === "girl_blondhair.png"}/>
                 <label><img src={avatarDirectory + "girl_blondhair.png"} alt="blondhair girl"/></label>
             </div>
             </div>
             <div class="field">
             <div class="ui radio checkbox">
-                <input type="radio" name="avatar" tabindex="0" class="hidden"/>
+            <input onChange={(e=>{setRadio(e.target.value)})} value="girl_darkhair.png" type="radio" checked={radio === "girl_darkhair.png"}/>
                 <label><img src={avatarDirectory + "girl_darkhair.png"} alt="darkhair girl"/></label>
             </div>
             </div>
             <div class="field">
             <div class="ui radio checkbox">
-                <input type="radio" name="avatar" tabindex="0" class="hidden"/>
+            <input onChange={(e=>{setRadio(e.target.value)})} value="girl2_darkhair.png" type="radio" checked={radio === "girl2_darkhair.png"}/>
                 <label><img src={avatarDirectory + "girl2_darkhair.png"} alt="darkhair girl2"/></label>
             </div>
             </div>
         </div>
-   
+  
         <label>Birthdate</label>
         <div className="field">
             <select onChange={handleInputChange} value={childObject.month} className="ui search dropdown" name="month">
