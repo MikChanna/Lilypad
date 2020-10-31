@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import API from "../../utils/ChildAPI";
-var avatarDirectory = process.env.PUBLIC_URL + "/assets/images/boy_darkhair.png";
+var avatarDirectory = process.env.PUBLIC_URL + "/assets/images/";
 
 function ChildData(){
 
@@ -35,7 +35,7 @@ function ChildData(){
         <center>
         <h2 className="ui header">
             <img
-            src={avatarDirectory}
+            src={avatarDirectory + child.image}
             className="ui circular image"
             alt="avatar"
             />
