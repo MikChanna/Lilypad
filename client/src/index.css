@@ -28,3 +28,12 @@ h1 {
 .video-item {
   margin: 20px;
 }
+
+.image {
+  width: 200px;
+}
+
+.ui.card,
+.ui.cards > .card {
+  width: 200px;
+}
