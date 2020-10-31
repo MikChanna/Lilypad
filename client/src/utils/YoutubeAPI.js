@@ -6,5 +6,6 @@ export default axios.create({
   params: {
     part: "snippet",
     key: YTkey,
+    safeSearch: "strict",
   },
 });
