@@ -5,6 +5,12 @@ function ChildItem({ data }) {
   let formattedBirthday = data.birthDate.slice(1, 6);
   console.log(formattedBirthday);
 
+
+  function editChild (event){
+      event.preventDefault();
+      window.location.replace("/editChild")
+  }
+
   return (
     <div className="ui card childCard green">
       <div className="image centered">
@@ -42,6 +48,9 @@ function ChildItem({ data }) {
               <div className="header">Favorite activity</div>
               {data.favoriteActivity}
             </div>
+            <span style={{color:"red"}} onClick={editChild(data._id)} className = "edit">
+        Edit
+      </span>
           </div>
         </div>
       </div>
