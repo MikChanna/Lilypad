@@ -29,11 +29,6 @@ h1 {
   margin: 20px;
 }
 
-.image {
-  width: 200px;
-}
-
-.ui.card,
-.ui.cards > .card {
+.ui.cards > .childCard {
   width: 200px;
 }

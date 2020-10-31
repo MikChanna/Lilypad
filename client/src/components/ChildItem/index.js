@@ -1,5 +1,4 @@
 import React from "react";
-import "./style.css";
 var avatarDirectory = process.env.PUBLIC_URL + "/assets/images/";
 
 function ChildItem({ data }) {
@@ -7,17 +6,17 @@ function ChildItem({ data }) {
   console.log(formattedBirthday);
 
   return (
-    <div class="ui card green">
-      <div class="image">
+    <div className="ui card childCard green">
+      <div className="image centered">
         <img
           src={avatarDirectory + data.image}
           className="ui circular image child-data-avatar"
           alt="avatar"
         />
       </div>
-      <div class="content">
-        <a class="header">{data.firstName}</a>
-        <div class="description">
+      <div className="content">
+        <a className="header">{data.firstName}</a>
+        <div className="description">
           <div className="ui list">
             <div className="item">
               <div className="header">Birthday</div>
