@@ -53,7 +53,6 @@ return <div>
         <div className="field">
 
         <label >Select an avatar:</label>
-        <h1> Radio button is :{radio}</h1>
         <div className="inline fields">
             <div className="field">
             <div className="ui radio checkbox">
@@ -70,20 +69,26 @@ return <div>
             </div>
             <div className="field">
             <div className="ui radio checkbox">
+            <input onChange={(e=>{setRadio(e.target.value)})} value="boy_redhair.png" type="radio" checked={radio === "boy_redhair.png"}/>
+                <label><img src={avatarDirectory + "boy_redhair.png"} alt="redhair boy"/></label>
+            </div>
+            </div>
+            <div className="field">
+            <div className="ui radio checkbox">
             <input onChange={(e=>{setRadio(e.target.value)})} value="girl_blondhair.png" type="radio" checked={radio === "girl_blondhair.png"}/>
                 <label><img src={avatarDirectory + "girl_blondhair.png"} alt="blondhair girl"/></label>
             </div>
             </div>
-            <div class="field">
-            <div class="ui radio checkbox">
+            <div className="field">
+            <div className="ui radio checkbox">
             <input onChange={(e=>{setRadio(e.target.value)})} value="girl_darkhair.png" type="radio" checked={radio === "girl_darkhair.png"}/>
                 <label><img src={avatarDirectory + "girl_darkhair.png"} alt="darkhair girl"/></label>
             </div>
             </div>
-            <div class="field">
-            <div class="ui radio checkbox">
-            <input onChange={(e=>{setRadio(e.target.value)})} value="girl2_darkhair.png" type="radio" checked={radio === "girl2_darkhair.png"}/>
-                <label><img src={avatarDirectory + "girl2_darkhair.png"} alt="darkhair girl2"/></label>
+            <div className="field">
+            <div className="ui radio checkbox">
+            <input onChange={(e=>{setRadio(e.target.value)})} value="girl_redhair.png" type="radio" checked={radio === "girl_redhair.png"}/>
+                <label><img src={avatarDirectory + "girl_redhair.png"} alt="redhair girl"/></label>
             </div>
             </div>
         </div>
