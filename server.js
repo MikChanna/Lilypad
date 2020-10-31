@@ -5,7 +5,7 @@ const PORT = process.env.PORT || 3001;
 const express = require("express");
 const mongoose = require("mongoose");
 var bodyParser = require('body-parser');
-var passport = require('passport');
+// var passport = require('passport');
 var path = require('path');
 
 const app = express();
@@ -41,8 +41,8 @@ app.use(express.static(path.join(__dirname, '/client/public')));
 // add routes
 app.use(routes);
 
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(passport.initialize());
+// app.use(passport.session());
 
 
 // app is listening on PORT
