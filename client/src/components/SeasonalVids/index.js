@@ -21,6 +21,7 @@ export default class SeasonalVids extends React.Component {
     const response = await YoutubeAPI.get("/search", {
       params: {
         q: searchTerm,
+        maxResults: 6,
       },
     });
     this.setState({
