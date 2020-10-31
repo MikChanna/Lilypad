@@ -5,53 +5,47 @@ var avatarDirectory =
 function ChildItem({ data }) {
   console.log(data);
   return (
-    <div>
-        <h1>Welcome to the ____ family! </h1>
 
-        <div className="stackable ui grid container childData">
-        {childData.map(child => (
-    <div className="five wide column" key={child._id}>
+    <div className="five wide column">
         <center>
         <h2 className="ui header">
             <img
-            src={avatarDirectory + child.image}
+            src={avatarDirectory + data.image}
             className="ui circular image"
             alt="avatar"
             />
-            {child.firstName}
+            {data.firstName}
         </h2>
 
         <div className="ui list">
         <div className="item">
             <div className="header">Birthday</div>
-            {child.birthDate}
+            {data.birthDate}
             </div>
             <div className="item">
             <div className="header">Age</div>
-            {child.age}
+            {data.age}
             </div>
             <div className="item">
             <div className="header">Allergies</div>
-            {child.allergies}
+            {data.allergies}
             </div>
             <div className="item">
             <div className="header">Bedtime</div>
-            {child.bedtime}
+            {data.bedtime}
             </div>
             <div className="item">
             <div className="header">Favorite food</div>
-            {child.favoriteFood}
+            {data.favoriteFood}
             </div>
             <div className="item">
             <div className="header">Favorite activity</div>
-            {child.favoriteActivity}
+            {data.favoriteActivity}
             </div>
         </div>
         </center>
     </div>
-        ))}
-    </div>
-      </div>
+        
   );
 }
 

@@ -1,12 +1,6 @@
 import React, { useState, useEffect } from "react";
 import API from "../../utils/ChildAPI";
-<<<<<<< HEAD
-var avatarDirectory = process.env.PUBLIC_URL + "/assets/images/";
-=======
 import ChildItem from "../ChildItem";
-// var avatarDirectory =
-//   process.env.PUBLIC_URL + "/assets/images/boy_darkhair.png";
->>>>>>> main
 
 function ChildData() {
   const [childData, setChildData] = useState([]);
@@ -16,14 +10,10 @@ function ChildData() {
     loadChildData();
   }, []);
 
-<<<<<<< HEAD
     // loads child information and stores them with setChildData
     useEffect(() => {
         loadChildData()
       }, [])
-=======
-  useEffect(() => {}, [childData]);
->>>>>>> main
 
   function loadChildData() {
     API.getChildren()
@@ -33,49 +23,6 @@ function ChildData() {
       .catch((err) => console.log(err));
   }
 
-<<<<<<< HEAD
-        <div className="stackable ui grid container childData">
-        {childData.map(child => (
-    <div className="five wide column" key={child._id}>
-        <center>
-        <h2 className="ui header">
-            <img
-            src={avatarDirectory + child.image}
-            className="ui circular image"
-            alt="avatar"
-            />
-            {child.firstName}
-        </h2>
-
-        <div className="ui list">
-        <div className="item">
-            <div className="header">Birthday</div>
-            {child.birthDate}
-            </div>
-            <div className="item">
-            <div className="header">Age</div>
-            {child.age}
-            </div>
-            <div className="item">
-            <div className="header">Allergies</div>
-            {child.allergies}
-            </div>
-            <div className="item">
-            <div className="header">Bedtime</div>
-            {child.bedtime}
-            </div>
-            <div className="item">
-            <div className="header">Favorite food</div>
-            {child.favoriteFood}
-            </div>
-            <div className="item">
-            <div className="header">Favorite activity</div>
-            {child.favoriteActivity}
-            </div>
-        </div>
-        </center>
-    </div>
-=======
   return (
     <div>
       <h1>Welcome to the ____ family! </h1>
@@ -83,7 +30,6 @@ function ChildData() {
       <div className="stackable ui grid container childData">
         {childData.map((child) => (
           <ChildItem key={child._id} data={child} />
->>>>>>> main
         ))}
       </div>
     </div>
