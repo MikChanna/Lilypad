@@ -9,11 +9,12 @@ const ChildSchema = Schema({
     type: Schema.Types.ObjectId,
     ref: "Family",
   },
-  lastName: {
-    type: String,
-  },
+ 
   birthDate: {
     type: String,
+  },
+  age: {
+    type:String,
   },
   allergies: {
     type: String,
@@ -27,6 +28,9 @@ const ChildSchema = Schema({
   favoriteActivity: {
     type: String,
   },
+  image:{
+    type: String,
+  }
 });
 
 const Child = mongoose.model("Child", ChildSchema);

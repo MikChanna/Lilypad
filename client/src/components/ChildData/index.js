@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import API from "../../utils/ChildAPI";
 import ChildItem from "../ChildItem";
-// var avatarDirectory =
-//   process.env.PUBLIC_URL + "/assets/images/boy_darkhair.png";
 
 function ChildData() {
   const [childData, setChildData] = useState([]);
@@ -12,7 +10,10 @@ function ChildData() {
     loadChildData();
   }, []);
 
-  useEffect(() => {}, [childData]);
+    // loads child information and stores them with setChildData
+    useEffect(() => {
+        loadChildData()
+      }, [])
 
   function loadChildData() {
     API.getChildren()
