@@ -11,6 +11,7 @@ const VideoList = ({ videos, handleVideoSelect }) => {
       />
     );
   });
-  return <div className="ui grid"> {renderedVideos}</div>;
+
+  return <div className="ui link centered cards">{renderedVideos}</div>;
 };
 export default VideoList;

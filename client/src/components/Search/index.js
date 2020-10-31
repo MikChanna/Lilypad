@@ -14,6 +14,7 @@ export default class Search extends React.Component {
     const response = await YoutubeAPI.get("/search", {
       params: {
         q: termFromSearchBar,
+        maxResults: 15,
       },
     });
     this.setState({

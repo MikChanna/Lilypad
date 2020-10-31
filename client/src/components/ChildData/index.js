@@ -10,10 +10,10 @@ function ChildData() {
     loadChildData();
   }, []);
 
-    // loads child information and stores them with setChildData
-    useEffect(() => {
-        loadChildData()
-      }, [])
+  // loads child information and stores them with setChildData
+  useEffect(() => {
+    loadChildData();
+  }, []);
 
   function loadChildData() {
     API.getChildren()
@@ -25,9 +25,9 @@ function ChildData() {
 
   return (
     <div>
-      <h1>Welcome to the ____ family! </h1>
+      <h1>Welcome to the ___ family! </h1>
 
-      <div className="stackable ui grid container childData">
+      <div className="ui link stackable centered cards">
         {childData.map((child) => (
           <ChildItem key={child._id} data={child} />
         ))}
