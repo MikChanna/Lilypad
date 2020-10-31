@@ -18,7 +18,10 @@ createChild: function(req, res){
             favoriteActivity: req.body.favoriteActivity,
             image: req.body.image
         })
-        .then(dbModel=>res.json(dbModel))
+        .then(dbModel=>{
+            console.log("dbmodel", dbModel)
+            res.json(dbModel) 
+        })
         .catch(function(err) {
             console.log("err", err)
             res.status(401).json(err)
