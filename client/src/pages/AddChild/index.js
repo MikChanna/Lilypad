@@ -49,32 +49,33 @@ return <div>
         <div className="inline fields">
             <div className="field">
             <div className="ui radio checkbox">
-                <input type="radio" name="avatar" tabindex="0" className="hidden"/>
-                <img src={avatarDirectory + "boy_blondhair.png"} alt="blondhair boy"/>
+                <input type="radio" name="avatar" tabindex="0"/>
+                <label><img src={avatarDirectory + "boy_blondhair.png"} alt="blondhair boy"/></label>
+                
+            </div>
+            </div>
+            <div className="field">
+            <div className="ui radio checkbox">
+                <input type="radio" name="avatar" tabindex="0"/>
+                <label><img src={avatarDirectory + "boy_darkhair.png"} alt="darkhair boy"/></label>
             </div>
             </div>
             <div className="field">
             <div className="ui radio checkbox">
                 <input type="radio" name="avatar" tabindex="0" className="hidden"/>
-                <img src={avatarDirectory + "boy_darkhair.png"} alt="darkhair boy"/>
-            </div>
-            </div>
-            <div className="field">
-            <div className="ui radio checkbox">
-                <input type="radio" name="avatar" tabindex="0" className="hidden"/>
-                <img src={avatarDirectory + "girl_blondhair.png"} alt="blondhair girl"/>
+                <label><img src={avatarDirectory + "girl_blondhair.png"} alt="blondhair girl"/></label>
             </div>
             </div>
             <div class="field">
             <div class="ui radio checkbox">
                 <input type="radio" name="avatar" tabindex="0" class="hidden"/>
-                <img src={avatarDirectory + "girl_darkhair.png"} alt="darkhair girl"/>
+                <label><img src={avatarDirectory + "girl_darkhair.png"} alt="darkhair girl"/></label>
             </div>
             </div>
             <div class="field">
             <div class="ui radio checkbox">
                 <input type="radio" name="avatar" tabindex="0" class="hidden"/>
-                <img src={avatarDirectory + "girl2_darkhair.png"} alt="darkhair girl2"/>
+                <label><img src={avatarDirectory + "girl2_darkhair.png"} alt="darkhair girl2"/></label>
             </div>
             </div>
         </div>

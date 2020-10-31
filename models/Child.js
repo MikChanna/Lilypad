@@ -28,6 +28,9 @@ const ChildSchema = Schema({
   favoriteActivity: {
     type: String,
   },
+  image:{
+    type: String,
+  }
 });
 
 const Child = mongoose.model("Child", ChildSchema);
