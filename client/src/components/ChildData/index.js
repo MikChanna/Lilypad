@@ -28,7 +28,7 @@ function ChildData() {
 
       <div className="stackable ui grid container childData">
         {childData.map((child) => (
-          <ChildItem key={child.id} data={child} />
+          <ChildItem key={child._id} data={child} />
         ))}
       </div>
     </div>
