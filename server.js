@@ -13,7 +13,7 @@ const routes = require("./routes");
 
 // mongoose connection
 mongoose.connect(
-  process.env.MONGODB_URI || 'mongodb://localhost/Lilypad',
+  process.env.MONGODB_URI || 'mongodb://localhost/lilypadData',
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
