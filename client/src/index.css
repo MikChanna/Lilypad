@@ -28,3 +28,9 @@ h1 {
 .video-item {
   margin: 20px;
 }
+
+.ui.cards > .childCard {
+  margin-right: 20px;
+  margin-left: 20px;
+  width: 200px;
+}
