@@ -2,8 +2,8 @@ import React from "react";
 
 const VideoItem = ({ video, handleVideoSelect }) => {
   return (
-    <div className="ui link cards">
-      <div className="card">
+    <div className="ui link centered cards">
+      <div className="green card" onClick={() => handleVideoSelect(video)}>
         <div className="image">
           <img
             src={video.snippet.thumbnails.medium.url}

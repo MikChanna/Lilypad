@@ -1,39 +1,13 @@
-import React, { useState, useEffect } from "react";
-import API from "../../utils/ChildAPI";
-<<<<<<< HEAD
-var avatarDirectory = process.env.PUBLIC_URL + "/assets/images/";
-=======
-import ChildItem from "../ChildItem";
-// var avatarDirectory =
-//   process.env.PUBLIC_URL + "/assets/images/boy_darkhair.png";
->>>>>>> main
+import React from "react";
+var avatarDirectory =
+  process.env.PUBLIC_URL + "/assets/images/";
 
-function ChildData() {
-  const [childData, setChildData] = useState([]);
+function ChildItem({ data }) {
+  console.log(data);
+  return (
+    <div>
+        <h1>Welcome to the ____ family! </h1>
 
-  // loads child information and strores them with setChildData
-  useEffect(() => {
-    loadChildData();
-  }, []);
-
-<<<<<<< HEAD
-    // loads child information and stores them with setChildData
-    useEffect(() => {
-        loadChildData()
-      }, [])
-=======
-  useEffect(() => {}, [childData]);
->>>>>>> main
-
-  function loadChildData() {
-    API.getChildren()
-
-      .then((res) => setChildData(res.data))
-
-      .catch((err) => console.log(err));
-  }
-
-<<<<<<< HEAD
         <div className="stackable ui grid container childData">
         {childData.map(child => (
     <div className="five wide column" key={child._id}>
@@ -75,19 +49,10 @@ function ChildData() {
         </div>
         </center>
     </div>
-=======
-  return (
-    <div>
-      <h1>Welcome to the ____ family! </h1>
-
-      <div className="stackable ui grid container childData">
-        {childData.map((child) => (
-          <ChildItem key={child._id} data={child} />
->>>>>>> main
         ))}
-      </div>
     </div>
+      </div>
   );
 }
 
-export default ChildData;
+export default ChildItem;
