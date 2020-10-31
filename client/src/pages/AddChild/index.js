@@ -126,6 +126,7 @@ function AddChild() {
             <input onChange={(e=>{setRadio(e.target.value)})} value="girl_redhair.png" type="radio" checked={radio === "girl_redhair.png"}/>
                 <label><img src={avatarDirectory + "girl_redhair.png"} alt="redhair girl"/></label>
             </div>
+            </div>
           </div>
 
           <label>Birthdate</label>
@@ -248,7 +249,7 @@ function AddChild() {
         <button onClick={createChild} className="ui button" type="submit">
           Save Data
         </button>
-        </div>
+       
       </form>
     </div>
   );
