@@ -30,7 +30,7 @@ module.exports = {
       } else {
           res.json({
               email: req.user.email,
-              id: req.user.ud
+              id: req.user.id
           })
         }
   },
