@@ -27,12 +27,15 @@ function Signup () {
     }
     console.log("calling API");
     API.createUser({
+      firstName: userObject.firstName,
+      lastName: userObject.lastName,
+      phoneNumber: userObject.phoneNumber,
       email: userObject.email,
       password: userObject.password
     })
       .then(function() {
         
-        window.location.replace("/");
+        window.location.replace("/login");
         
       //   // If there's an error, handle it by throwing up a bootstrap alert
       })
