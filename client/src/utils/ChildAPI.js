@@ -10,6 +10,9 @@ export default {
     },
     getChildren: function(childData){
         return axios.get("/api/child", childData)
+    },
+    updateChild: function(id){
+        return axios.get("/api/child" + id) 
     }
 
 }
