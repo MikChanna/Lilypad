@@ -12,7 +12,7 @@ module.exports = {
           password: req.body.password
       })
       .then(function() {
-          res.redirect(307, "/");
+          res.redirect(307, "/login");
       })
       .catch(function(err) {
           console.log("err", err)
