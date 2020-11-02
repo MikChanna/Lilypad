@@ -6,7 +6,7 @@ import API from "../../utils/UserAPI"
 
 function Signup () {
 
-  const [userObject, setUserObject] = useState({email:"", password:""});
+  const [userObject, setUserObject] = useState({firstName:"", lastName:"", phoneNumber:"",email:"", password:""});
 
   function handleInputChange(event) {
       const { name, value } = event.target;
@@ -44,6 +44,18 @@ function Signup () {
 
     return <div className = "credForm">
         <form className = "ui form ">
+            <div className = "field">
+                <label>First Name</label>
+                <input onChange={handleInputChange} value= {userObject.firstName} type = "text" name="firstName" placeholder = "First Name" id="firstName" />
+            </div>
+            <div className = "field">
+                <label>Last Name</label>
+                <input onChange={handleInputChange} value= {userObject.lastName} type = "text" name="lastName" placeholder = "Last Name" id="lastName" />
+            </div>
+            <div className = "field">
+                <label>Phone Number</label>
+                <input onChange={handleInputChange} value= {userObject.phoneNumber} type = "text" name="phoneNumber" placeholder = "000-000-000" id="phoneNumber" />
+            </div>
             <div className = "field">
                 <label>Email Address</label>
                 <input onChange={handleInputChange} value= {userObject.email} type = "text" name="email" placeholder = "Email Address" id="email-input" />
