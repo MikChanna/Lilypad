@@ -8,6 +8,9 @@ module.exports = {
     console.log("reqbody", req.body)
     db.User
       .create({
+          firstName: req.body.firstName,
+          lastName: req.body.lastName,
+          phoneNumber: req.body.phoneNumber,
           email: req.body.email,
           password: req.body.password
       })
