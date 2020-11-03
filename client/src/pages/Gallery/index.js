@@ -1,11 +1,15 @@
 import React, { Component } from "react";
 import ReactS3 from "react-s3";
+// const awsAPIKey = process.env.S3_KEY;
+// const awsSecret = process.env.S3_SECRET;
+// const bucket = process.env.BUCKET_NAME;
+// const awsRegion = process.env.BUCKET_NAME;
 
 const config = {
-  bucketName: "lilypad",
-  region: "us-east-1",
-  accessKeyId: "AKIARYI6BBD4LBDYXLCM",
-  secretAccessKey: "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",
+  bucketName: process.env.BUCKET_NAME,
+  region: process.env.BUCKET_NAME,
+  accessKeyId: process.env.S3_KEY,
+  secretAccessKey: process.env.S3_SECRET,
 };
 
 class Gallery extends Component {
