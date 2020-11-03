@@ -1,30 +1,23 @@
 import React, { Component } from "react";
-import ReactDom from "react-dom";
-import ReactS3, { uploadFile } from "react-s3";
-// import S3FileUpload from "react-s3";
-// import { uploadFile } from "react-s3";
+import ReactS3 from "react-s3";
 
 const config = {
   bucketName: "lilypad",
-  dirName: "photos" /* optional */,
   region: "us-east-1",
-  accessKeyId: "AKIARYI6BBD4EFDGC2MT",
-  secretAccessKey: "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",
+  accessKeyId: "AKIARYI6BBD4LBDYXLCM",
+  secretAccessKey: "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",
 };
 
 class Gallery extends Component {
-  constructor() {
-    super();
-  }
-
   upload(e) {
     console.log(e.target.files[0]);
     ReactS3.uploadFile(e.target.files[0], config)
       .then((data) => {
         console.log(data);
+        console.log(data.location);
       })
       .catch((err) => {
-        alert(err);
+        console.log(err);
       });
   }
 
