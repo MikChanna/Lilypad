@@ -16,7 +16,7 @@ const routes = require("./routes");
 
 // mongoose connection
 mongoose.connect(
-  process.env.MONGODB_URI || 'mongodb://localhost/copyLilypad',
+  process.env.MONGODB_URI || 'mongodb://localhost/Lilypad',
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,

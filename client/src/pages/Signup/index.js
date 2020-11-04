@@ -15,7 +15,9 @@ function Signup () {
 
   });
 
-const register = () => {
+const register = (event) => {
+event.preventDefault();
+
   API.createUser({
 
       username: userObject.username,
@@ -25,7 +27,10 @@ const register = () => {
       phoneNumber: userObject.phoneNumber,
       withCredentials: true,
 
-  }).then((res) => console.log(res));
+  }).then((res) => 
+    {console.log("user created")
+    window.location.replace("/login")})
+
 };
 
 function handleInputChange(event) {

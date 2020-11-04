@@ -9,13 +9,16 @@ function Login () {
     password:"",
   })
 
-  const loginRequest = () => {
+  const loginRequest = (event) => {
+    event.preventDefault();
 
     API.loginUser({
         username: loginUser.username,
         password: loginUser.password,
         withCredentials: true,
-    }).then((res) => console.log(res)
+    }).then((res) => {
+      console.log(res)
+      window.location.replace("/")}
     )
   };
     

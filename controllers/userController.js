@@ -23,9 +23,12 @@ module.exports = {
 
           });
           await newUser.save();
-          res.send("User Created");
+          console.log("User Created");
+          res.status(200).end();
+          // res.redirect(307, "/api/login");
         }
       });
+
   },
   login: function(req, res, next) {
     console.log("reqbody:login", req.body)
@@ -40,6 +43,8 @@ module.exports = {
         });
       }
     })(req, res, next);
+
+ 
   },
   findUserData: function(req, res) {
       if(!req.user) {

@@ -6,8 +6,8 @@ export default {
     return axios.post("/api/users/signup", userData);
   },
   // find user
-  loginUser: function() {
-    return axios.post("/api/users/login");
+  loginUser: function(loginData) {
+    return axios.post("/api/users/login", loginData);
   },
   // logout user
   logoutUser: function() {
