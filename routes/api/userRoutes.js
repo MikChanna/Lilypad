@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const router = require("express").Router();
 const userController = require("../../controllers/userController");
 
 // Matches with "/api/users/login"
@@ -16,9 +17,9 @@ router
   .route("/logout")
   .get(userController.logout);
 
-// Matches with "/api/users/user_data
+// Matches with "/api/users/userdata
 router
-  .route("/user_data")
+  .route("/userdata")
   .get(userController.findUserData);
 
 module.exports = router;
