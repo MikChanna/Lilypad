@@ -15,6 +15,6 @@ export default {
   },
   // gets user data
   getUser: function() {
-    return axios.get("/api/users/user_data");
+    return axios.get("/api/users/userdata");
   }
 };
