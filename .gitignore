@@ -105,3 +105,8 @@ dist
 
 #Youtube API key 
 .YTkey.js 
+
+node_modules/
+*.sw*
+*.env
+.DS_Store
