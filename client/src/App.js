@@ -10,9 +10,6 @@ import Login from "./pages/Login";
 import AddChild from "./pages/AddChild";
 import Footer from "./components/Footer";
 
-// const express = require("express");
-// const aws = require("aws-sdk");
-
 function App() {
   return (
     <div className="App">
