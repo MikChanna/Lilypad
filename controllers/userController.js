@@ -4,6 +4,7 @@ const db = require("../models");
 
 // Defining methods for the userController
 module.exports = {
+<<<<<<< HEAD
  
   createUser: function(req, res) {
     console.log("reqbody:signup", req.body)
@@ -27,9 +28,24 @@ module.exports = {
           res.status(200).end();
           // res.redirect(307, "/api/login");
         }
+=======
+  createUser: function (req, res) {
+    console.log("reqbody", req.body);
+    db.User.create({
+      email: req.body.email,
+      password: req.body.password,
+    })
+      .then(function () {
+        res.redirect(307, "/");
+      })
+      .catch(function (err) {
+        console.log("err", err);
+        res.status(401).json(err);
+>>>>>>> main
       });
 
   },
+<<<<<<< HEAD
   login: function(req, res, next) {
     console.log("reqbody:login", req.body)
     passport.authenticate("local", (err, user, info) => {
@@ -53,11 +69,27 @@ module.exports = {
         res.send(req.user); 
           
         }
+=======
+  login: function (req, res) {
+    passport.authenticate("local"),
+      function (req, res) {
+        res.redirect(307, "/");
+      };
   },
-  
-  logout: function(req, res) {
+  findUserData: function (req, res) {
+    if (!req.user) {
+      res.json({});
+    } else {
+      res.json({
+        email: req.user.email,
+        id: req.user.ud,
+      });
+    }
+>>>>>>> main
+  },
+
+  logout: function (req, res) {
     req.logout();
-    res.redirect("/login")
-      
-  }
+    res.redirect("/login");
+  },
 };
