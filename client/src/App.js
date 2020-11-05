@@ -12,16 +12,16 @@ import Footer from "./components/Footer";
 
 function App() {
 
-  const [isAuthenticated, setisAuthenticated] = useState(false);
-  // If the user is logged in, continue with the request to the restricted route
-  if (req.user) {
-    setisAuthenticated(true)
-    console.log("loggedInUser", + isAuthenticated)
-  }
+  // const [isAuthenticated, setisAuthenticated] = useState(false);
+  // // If the user is logged in, continue with the request to the restricted route
+  // if (req.user) {
+  //   setisAuthenticated(true)
+  //   console.log("loggedInUser", + isAuthenticated)
+  // }
 
-  // If the user isn't logged in, redirect them to the login page
-  setisAuthenticated(false)
-  console.log("loggedInUser", + isAuthenticated)
+  // // If the user isn't logged in, redirect them to the login page
+  // setisAuthenticated(false)
+  // console.log("loggedInUser", + isAuthenticated)
 
   return (
     <div className="App">
