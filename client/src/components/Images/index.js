@@ -24,9 +24,10 @@ function Images() {
   return (
     <div>
       <div className="ui link stackable centered cards">
-        {imageData.map((image) => (
+        {/* {imageData.map((image) => (
           <ImageItem key={image._id} data={image} />
-        ))}
+        ))} */}
+        images will go here
       </div>
     </div>
   );

@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import "./style.css";
 import "../../components/Images";
-import Images from "../../components/Images";
-import API from "../../utils/ImagesAPI";
+// import Images from "../../components/Images";
+// import API from "../../utils/ImagesAPI";
 // import imageLinks from "./images.json";
 
 var defaultimage =
@@ -46,7 +46,7 @@ function Gallery() {
       }
     };
     xhr.send();
-    addImage(response.signedRequest);
+    // addImage(response.signedRequest);
   }
 
   function initUpload() {
@@ -60,17 +60,17 @@ function Gallery() {
     }
   }
 
-  function addImage(data) {
-    console.log("adding image to mongodb");
-    API.addImage({
-      url: data,
-    }).catch((err) => console.log(err));
-  }
+  // function addImage(data) {
+  //   console.log("adding image to mongodb");
+  //   API.addImage({
+  //     url: data,
+  //   }).catch((err) => console.log(err));
+  // }
 
   return (
     <div className="photo form">
       <h1>Share some memories!</h1>
-      <Images />
+      {/* <Images /> */}
       <form method="POST" action="/save-details">
         <input type="hidden" id="avatar-url" name="avatar-url" />
       </form>
