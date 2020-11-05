@@ -17,7 +17,6 @@ const routes = require("./routes");
 const aws = require("aws-sdk");
 aws.config.region = "us-east-1";
 const S3_BUCKET = process.env.BUCKET_NAME;
-const app = express();
 console.log("bucket name", S3_BUCKET);
 
 // mongoose connection
