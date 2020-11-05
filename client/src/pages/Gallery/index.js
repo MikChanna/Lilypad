@@ -1,5 +1,10 @@
 import React, { useEffect } from "react";
 import "./style.css";
+import "../../components/Images";
+import Images from "../../components/Images";
+import API from "../../utils/ImagesAPI";
+// import imageLinks from "./images.json";
+
 var defaultimage =
   process.env.PUBLIC_URL + "/assets/images/default_photoupload.jpg";
 
@@ -8,9 +13,6 @@ function Gallery() {
     document.getElementById("file-input").onchange = initUpload;
   }, []);
 
-  /* Function to carry out the actual PUT request to S3 
-  using the signed request from the app.
-  */
   function uploadFile(file, signedRequest, url) {
     const xhr = new XMLHttpRequest();
     xhr.open("PUT", signedRequest);
@@ -27,18 +29,16 @@ function Gallery() {
     xhr.send(file);
   }
 
-  /* Function to get the temporary signed request from the app.
-  If request successful, continue to upload the file using this signed
-  request. */
   function getSignedRequest(file) {
     const xhr = new XMLHttpRequest();
+    let response = "";
     xhr.open("GET", `/sign-s3?file-name=${file.name}&file-type=${file.type}`);
     xhr.onreadystatechange = () => {
       if (xhr.readyState === 4) {
         if (xhr.status === 200) {
           console.log(xhr.responseText);
-          const response = JSON.parse(xhr.responseText);
-          console.log(response);
+          response = JSON.parse(xhr.responseText);
+          console.log(response.signedRequest);
           uploadFile(file, response.signedRequest, response.url);
         } else {
           alert("Could not get signed URL.");
@@ -46,10 +46,9 @@ function Gallery() {
       }
     };
     xhr.send();
+    addImage(response.signedRequest);
   }
 
-  /* Function called when file input updated. If there is a file selected, then
-  start upload procedure by asking for a signed request from the app. */
   function initUpload() {
     const files = document.getElementById("file-input").files;
     const file = files[0];
@@ -61,19 +60,27 @@ function Gallery() {
     }
   }
 
+  function addImage(data) {
+    console.log("adding image to mongodb");
+    API.addImage({
+      url: data,
+    }).catch((err) => console.log(err));
+  }
+
   return (
     <div className="photo form">
       <h1>Share some memories!</h1>
+      <Images />
       <form method="POST" action="/save-details">
-        <input
-          type="hidden"
-          id="avatar-url"
-          name="avatar-url"
-          value="/images/default.png"
-        />
+        <input type="hidden" id="avatar-url" name="avatar-url" />
       </form>
       <p id="status">Please select a file to add to the family album</p>
-      <input type="file" id="file-input" /> <br />
+      <form>
+        <input type="file" id="file-input" />
+        <button className="ui button signup" type="submit">
+          Add!
+        </button>
+      </form>
       <img id="preview" src={defaultimage} alt="" />
     </div>
   );
