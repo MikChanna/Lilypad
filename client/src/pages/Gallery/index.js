@@ -6,16 +6,6 @@ function Gallery() {
     document.getElementById("file-input").onchange = initUpload;
   }, []);
 
-  // upload(e) {
-  //   ReactS3.uploadFile(e.target.files[0], config)
-  //     .then((data) => {
-  //       console.log(data);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // }
-
   /* Function to carry out the actual PUT request to S3 
   using the signed request from the app.
   */
@@ -82,18 +72,6 @@ function Gallery() {
         src="/images/default.png"
         alt=""
       />
-
-      <h2>Your information</h2>
-
-      <form method="POST" action="/save-details">
-        <input type="hidden" id="avatar-url" name="avatar-url" value="" />
-        <input type="text" name="username" placeholder="Username" />
-        <input type="text" name="full-name" placeholder="Full name" />
-
-        <h2>Save changes</h2>
-
-        <input type="submit" value="Update profile" />
-      </form>
     </div>
   );
 }
