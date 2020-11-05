@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
-// import ReactS3 from "react-s3";
+import "./style.css";
+var defaultimage =
+  process.env.PUBLIC_URL + "/assets/images/default_photoupload.jpg";
 
 function Gallery() {
   useEffect(() => {
@@ -36,6 +38,7 @@ function Gallery() {
         if (xhr.status === 200) {
           console.log(xhr.responseText);
           const response = JSON.parse(xhr.responseText);
+          console.log(response);
           uploadFile(file, response.signedRequest, response.url);
         } else {
           alert("Could not get signed URL.");
@@ -61,17 +64,17 @@ function Gallery() {
   return (
     <div className="photo form">
       <h1>Share some memories!</h1>
-
-      <h2>Upload your pictures</h2>
-
-      <input type="file" id="file-input" />
-      <p id="status">Please select a file</p>
-      <img
-        // style="border:1px solid gray;width:300px;"
-        id="preview"
-        src="/images/default.png"
-        alt=""
-      />
+      <form method="POST" action="/save-details">
+        <input
+          type="hidden"
+          id="avatar-url"
+          name="avatar-url"
+          value="/images/default.png"
+        />
+      </form>
+      <p id="status">Please select a file to add to the family album</p>
+      <input type="file" id="file-input" /> <br />
+      <img id="preview" src={defaultimage} alt="" />
     </div>
   );
 }
