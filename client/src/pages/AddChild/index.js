@@ -45,7 +45,7 @@ function AddChild() {
     })
       // go back to homepage after adding child
       .then(function () {
-        window.location.replace("/");
+        window.location.replace("/home");
       })
       .catch((err) => console.log(err));
   }

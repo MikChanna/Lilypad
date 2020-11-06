@@ -23,7 +23,7 @@ function Signup() {
       withCredentials: true,
     }).then((res) => {
       console.log("user created");
-      window.location.replace("/login");
+      window.location.replace("/");
     });
   };
 

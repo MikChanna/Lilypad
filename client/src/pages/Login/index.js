@@ -18,7 +18,7 @@ function Login () {
         withCredentials: true,
     }).then((res) => {
       console.log(res)
-      window.location.replace("/")}
+      window.location.replace("/home")}
     )
   };
     
