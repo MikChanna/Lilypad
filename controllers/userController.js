@@ -41,6 +41,7 @@ module.exports = {
     })(req, res, next);
   },
   findUserData: function (req, res) {
+    console.log("finding user data")
     if (!req.user) {
       res.json({});
     } else {

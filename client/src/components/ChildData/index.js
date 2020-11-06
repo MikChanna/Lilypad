@@ -1,13 +1,19 @@
 import React, { useState, useEffect } from "react";
 import API from "../../utils/ChildAPI";
+import userAPI from "../../utils/UserAPI"
 import ChildItem from "../ChildItem";
 
 function ChildData() {
   const [childData, setChildData] = useState([]);
+  const [userData, setUserData] = useState("");
 
   // loads child information and stores them with setChildData
   useEffect(() => {
     loadChildData();
+  }, []);
+
+  useEffect(() => {
+    loadUserData();
   }, []);
 
   function loadChildData() {
@@ -18,9 +24,17 @@ function ChildData() {
       .catch((err) => console.log(err));
   }
 
+  function loadUserData() {
+    userAPI.getUser()
+
+      .then((res) => setUserData(res.data))
+
+      .catch((err) => console.log(err));
+  }
+
   return (
     <div>
-      <h1>Welcome to the ___ family! </h1>
+      <h1>Welcome to the {userData.lastName} family! </h1>
 
       <div className="ui link stackable centered cards">
         {childData.map((child) => (

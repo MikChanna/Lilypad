@@ -1,12 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import API from "../../utils/ChildAPI";
 import "./style.css";
 import moment from "moment";
 import Navbar from "../../components/Navbar"
+import EditChildItem from "../../components/EditChildItem";
 
 var avatarDirectory = process.env.PUBLIC_URL + "/assets/images/";
 
-function AddChild() {
+function EditChild() {
+
+  const [editChildData, setEditChildData] = useState([]);
+
+  useEffect(() => {
+    loadChildData();
+  }, []);
+
+  function loadChildData() {
+    API.getChildren()
+
+      .then((res) => setEditChildData(res.data))
+
+      .catch((err) => console.log(err));
+  }
+  
   const [childObject, setChildObject] = useState({
     firstName: "",
     month: "",
@@ -55,7 +71,17 @@ function AddChild() {
     <div className = "ui container fluid">
       <Navbar/>
     <div>
-      <h1> Add a new child!</h1>
+      <h1> Please select a child to edit</h1>
+      <div className = "ui link stackable centered">
+    
+        <div className="ui five column grid centered editChildCard">
+            {editChildData.map((data) => ( 
+          <EditChildItem key={data._id} data = {data}/>
+           ))}
+        </div>
+          
+
+
       <form className="ui form">
         <div className="field">
           <label>First Name</label>
@@ -257,7 +283,8 @@ function AddChild() {
       </form>
     </div>
     </div>
+    </div>
   );
 }
 
-export default AddChild;
+export default EditChild;
