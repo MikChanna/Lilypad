@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import API from "../../utils/ImagesAPI";
 import ImageItem from "../ImageItem";
 
-function Images() {
+function Images({ images }) {
   const [imageData, setImageData] = useState([]);
+  console.log(images);
 
   // loads child information and stores them with setChildData
   useEffect(() => {
@@ -14,7 +15,6 @@ function Images() {
     API.getImages()
 
       .then((res) => {
-        console.log(res.data);
         setImageData(res.data);
       })
 
@@ -27,6 +27,7 @@ function Images() {
         {imageData.map((image) => (
           <ImageItem key={image._id} data={image} />
         ))}
+        <br />
       </div>
     </div>
   );

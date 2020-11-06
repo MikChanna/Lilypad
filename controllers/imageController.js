@@ -1,22 +1,21 @@
 const db = require("../models");
 
-// Defining methods for the userController
+// Defining methods for the imageController
 module.exports = {
   addImage: function (req, res) {
     console.log("reqbody", req.body);
-    db.Images.create({
-      image: req.body.url,
+    console.log(db);
+    db.Image.create({
+      url: req.body.url,
     }).catch(function (err) {
       console.log("err", err);
       res.status(401).json(err);
     });
   },
-
+  //finds all images
   getAllImages: function (req, res) {
-    if (!req.image) {
-      res.json({});
-    } else {
-      db.Images.find({}).then(res.json(db.model));
-    }
+    db.Image.find({})
+      .then((dbModel) => res.json(dbModel))
+      .catch((err) => res.status(422).json(err));
   },
 };
