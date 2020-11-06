@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./style.css";
 import Images from "../../components/Images";
 import API from "../../utils/ImagesAPI";
-import Navbar from "../../components/Navbar"
+import Navbar from "../../components/Navbar";
 
 var defaultimage =
   process.env.PUBLIC_URL + "/assets/images/default_photoupload.jpg";
@@ -80,9 +80,8 @@ function Gallery() {
   }
 
   return (
-    <div className = "ui container fluid">
-      <Navbar/>
-    <div className="photo form">
+    <div className="ui container fluid">
+      <Navbar />
       <h1>Share some memories!</h1>
       <Images images={images} />
       <form method="POST" action="/save-details">
@@ -98,7 +97,6 @@ function Gallery() {
           Add!
         </button>
       </form>
-    </div>
     </div>
   );
 }
