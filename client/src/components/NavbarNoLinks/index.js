@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Menu } from "semantic-ui-react";
-import { Link } from "react-router-dom";
 var avatarDirectory = process.env.PUBLIC_URL + "/assets/images/";
 var imageStyle = {
   padding: "5px",
@@ -14,7 +13,6 @@ export default class NavbarNoLinks extends Component {
   handleItemClick = (e, { name }) => this.setState({ activeItem: name });
 
   render() {
-    const { activeItem } = this.state;
 
     return (
       <div>
