@@ -1,16 +1,19 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./style.css";
-import "../../components/Images";
-// import Images from "../../components/Images";
-// import API from "../../utils/ImagesAPI";
-// import imageLinks from "./images.json";
+import Images from "../../components/Images";
+import API from "../../utils/ImagesAPI";
 
 var defaultimage =
   process.env.PUBLIC_URL + "/assets/images/default_photoupload.jpg";
 
 function Gallery() {
+  const [images, setImages] = useState([
+    "https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FSmiley&psig=AOvVaw2qCzYfN9unctxOl_gHSbjl&ust=1604707494224000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCOiwjrPP7OwCFQAAAAAdAAAAABAD",
+  ]);
+
   useEffect(() => {
     document.getElementById("file-input").onchange = initUpload;
+    getAllImages();
   }, []);
 
   function uploadFile(file, signedRequest, url) {
@@ -21,6 +24,7 @@ function Gallery() {
         if (xhr.status === 200) {
           document.getElementById("preview").src = url;
           document.getElementById("avatar-url").value = url;
+          addImage(url);
         } else {
           alert("Could not upload file.");
         }
@@ -60,17 +64,30 @@ function Gallery() {
     }
   }
 
-  // function addImage(data) {
-  //   console.log("adding image to mongodb");
-  //   API.addImage({
-  //     url: data,
-  //   }).catch((err) => console.log(err));
-  // }
+  function addImage(imageURL) {
+    console.log("adding image to mongodb");
+    console.log(imageURL);
+    console.log(API);
+    API.addImage({
+      url: imageURL,
+    }).catch((err) => console.log(err));
+  }
+
+  function getAllImages() {
+    API.getImages()
+      .then((res) => {
+        setImages(res);
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
 
   return (
     <div className="photo form">
       <h1>Share some memories!</h1>
-      {/* <Images /> */}
+      <Images images={images} />
       <form method="POST" action="/save-details">
         <input type="hidden" id="avatar-url" name="avatar-url" />
       </form>

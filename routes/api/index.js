@@ -5,6 +5,6 @@ const imageRoutes = require("./imagesRoutes");
 
 router.use("/users", userRoutes);
 router.use("/child", childRoutes);
-router.use("/images", imageRoutes);
+router.use("/image", imageRoutes);
 
 module.exports = router;

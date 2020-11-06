@@ -3,5 +3,6 @@
 module.exports = {
   Family: require("./Family"),
   Child: require("./Child"),
-  User: require("./user")
+  User: require("./user"),
+  Image: require("./Image"),
 };
