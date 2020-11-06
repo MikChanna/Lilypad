@@ -40,9 +40,7 @@ function Gallery() {
     xhr.onreadystatechange = () => {
       if (xhr.readyState === 4) {
         if (xhr.status === 200) {
-          console.log(xhr.responseText);
           response = JSON.parse(xhr.responseText);
-          console.log(response.signedRequest);
           uploadFile(file, response.signedRequest, response.url);
         } else {
           alert("Could not get signed URL.");
@@ -65,9 +63,6 @@ function Gallery() {
   }
 
   function addImage(imageURL) {
-    console.log("adding image to mongodb");
-    console.log(imageURL);
-    console.log(API);
     API.addImage({
       url: imageURL,
     }).catch((err) => console.log(err));
@@ -77,7 +72,6 @@ function Gallery() {
     API.getImages()
       .then((res) => {
         setImages(res);
-        console.log(res);
       })
       .catch((err) => {
         console.log(err);
@@ -91,14 +85,16 @@ function Gallery() {
       <form method="POST" action="/save-details">
         <input type="hidden" id="avatar-url" name="avatar-url" />
       </form>
-      <p id="status">Please select a file to add to the family album</p>
+      <h5 id="status">Add more images:</h5>
+
+      <img id="preview" src={defaultimage} alt="" />
+
       <form>
         <input type="file" id="file-input" />
         <button className="ui button signup" type="submit">
           Add!
         </button>
       </form>
-      <img id="preview" src={defaultimage} alt="" />
     </div>
   );
 }

@@ -15,7 +15,6 @@ function Images({ images }) {
     API.getImages()
 
       .then((res) => {
-        console.log(res.data);
         setImageData(res.data);
       })
 
@@ -28,7 +27,7 @@ function Images({ images }) {
         {imageData.map((image) => (
           <ImageItem key={image._id} data={image} />
         ))}
-        images will go here
+        <br />
       </div>
     </div>
   );
