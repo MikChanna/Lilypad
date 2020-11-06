@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import API from "../../utils/ChildAPI";
 import "./style.css";
 import moment from "moment";
+import Navbar from "../../components/Navbar"
+
 var avatarDirectory = process.env.PUBLIC_URL + "/assets/images/";
 
 function AddChild() {
@@ -50,6 +52,8 @@ function AddChild() {
       .catch((err) => console.log(err));
   }
   return (
+    <div className = "ui container fluid">
+      <Navbar/>
     <div>
       <h1> Add a new child!</h1>
       <form className="ui form">
@@ -251,6 +255,7 @@ function AddChild() {
         </button>
        
       </form>
+    </div>
     </div>
   );
 }

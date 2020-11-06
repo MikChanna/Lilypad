@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import "./style.css";
 import API from "../../utils/UserAPI"
+import NavbarNoLinks from "../../components/NavbarNoLinks"
 
 function Login () {
 
@@ -30,7 +31,9 @@ function Login () {
 
 
 
-  return <div className = "credForm">
+  return <div className = "ui container fluid">
+    <NavbarNoLinks/>
+    <div className = "credForm">
       <form className = "ui form">
           <div className = "field">
               <label>Username</label>
@@ -44,6 +47,7 @@ function Login () {
       </form>
       <br/>
       <p>Or sign up <a href="/signup">here</a></p>
+  </div>
   </div>
 
 }
