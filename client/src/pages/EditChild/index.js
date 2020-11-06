@@ -76,7 +76,7 @@ function EditChild() {
     
         <div className="ui five column grid centered editChildCard">
             {editChildData.map((data) => ( 
-          <EditChildItem key={data._id}/>
+          <EditChildItem key={data._id} data = {data}/>
            ))}
         </div>
           

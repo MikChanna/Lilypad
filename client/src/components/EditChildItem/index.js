@@ -1,8 +1,6 @@
 import React from "react";
 
-
-
-var avatarDirectory = process.env.PUBLIC_URL + "/assets/images/";
+const avatarDirectory = process.env.PUBLIC_URL + "/assets/images/";
 
 function EditChildItem({data}) {
 
@@ -10,7 +8,7 @@ function EditChildItem({data}) {
 
   return (
     
-        <div className="ui five column grid centered editChildCard">
+        <div className="ui column grid centered">
            
           <div className="column">
             <div className="ui fluid card" >
