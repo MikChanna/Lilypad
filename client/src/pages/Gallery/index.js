@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "./style.css";
 import Images from "../../components/Images";
 import API from "../../utils/ImagesAPI";
 
@@ -79,16 +78,14 @@ function Gallery() {
   }
 
   return (
-    <div className="photo form">
+    <div>
       <h1>Share some memories!</h1>
       <Images images={images} />
       <form method="POST" action="/save-details">
         <input type="hidden" id="avatar-url" name="avatar-url" />
       </form>
       <h5 id="status">Add more images:</h5>
-
       <img id="preview" src={defaultimage} alt="" />
-
       <form>
         <input type="file" id="file-input" />
         <button className="ui button signup" type="submit">
