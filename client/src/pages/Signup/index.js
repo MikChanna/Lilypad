@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./style.css";
 import API from "../../utils/UserAPI";
-import NavbarNoLinks from "../../components/NavbarNoLinks"
+import NavbarNoLinks from "../../components/NavbarNoLinks";
 
 function Signup() {
   const [userObject, setUserObject] = useState({
@@ -24,15 +24,15 @@ function Signup() {
       withCredentials: true,
     }).then((res) => {
       console.log("res", res);
-      if(res.data === "User Already Exists"){
-        alert("User already exists")
-      }else{
+
+      if (res.data === "User Already Exists") {
+        alert("User already exists");
+      } else {
         window.location.replace("/");
-        res.send("Create account successful!")
-        
+        res.send("Create account successful!");
       }
-      
-    })
+    });
+
   };
 
   function handleInputChange(event) {
@@ -42,69 +42,71 @@ function Signup() {
   }
 
   return (
-    <div className = "ui container fluid">
-      <NavbarNoLinks/>
+
+    <div className="ui container fluid">
+      <NavbarNoLinks />
       <div className="credFormS">
-      <form className="ui form ">
-        <div className="field">
-          <label>First Name</label>
-          <input
-            onChange={handleInputChange}
-            type="text"
-            name="firstName"
-            placeholder="First Name"
-            id="firstName"
-          />
-        </div>
-        <div className="field">
-          <label>Last Name</label>
-          <input
-            onChange={handleInputChange}
-            type="text"
-            name="lastName"
-            placeholder="Last Name"
-            id="lastName"
-          />
-        </div>
-        <div className="field">
-          <label>Phone Number</label>
-          <input
-            onChange={handleInputChange}
-            type="text"
-            name="phoneNumber"
-            placeholder="000-000-000"
-            id="phoneNumber"
-          />
-        </div>
-        <div className="field">
-          <label>Username</label>
-          <input
-            onChange={handleInputChange}
-            type="text"
-            name="username"
-            placeholder="username"
-            id="username"
-          />
-        </div>
-        <div className="field">
-          <label>Password</label>
-          <input
-            onChange={handleInputChange}
-            type="password"
-            name="password"
-            placeholder="Password"
-            id="password-input"
-          />
-        </div>
-        <button onClick={register} className="ui button signup" type="submit">
-          Sign Up
-        </button>
-      </form>
-      <br />
-      <p>
-        Or log in <a href="/login">here</a>
-      </p>
-    </div>
+        <form className="ui form ">
+          <div className="field">
+            <label>First Name</label>
+            <input
+              onChange={handleInputChange}
+              type="text"
+              name="firstName"
+              placeholder="First Name"
+              id="firstName"
+            />
+          </div>
+          <div className="field">
+            <label>Last Name</label>
+            <input
+              onChange={handleInputChange}
+              type="text"
+              name="lastName"
+              placeholder="Last Name"
+              id="lastName"
+            />
+          </div>
+          <div className="field">
+            <label>Phone Number</label>
+            <input
+              onChange={handleInputChange}
+              type="text"
+              name="phoneNumber"
+              placeholder="000-000-000"
+              id="phoneNumber"
+            />
+          </div>
+          <div className="field">
+            <label>Username</label>
+            <input
+              onChange={handleInputChange}
+              type="text"
+              name="username"
+              placeholder="username"
+              id="username"
+            />
+          </div>
+          <div className="field">
+            <label>Password</label>
+            <input
+              onChange={handleInputChange}
+              type="password"
+              name="password"
+              placeholder="Password"
+              id="password-input"
+            />
+          </div>
+          <button onClick={register} className="ui button signup" type="submit">
+            Sign Up
+          </button>
+        </form>
+        <br />
+        <p>
+          Or log in <a href="/login">here</a>
+        </p>
+      </div>
+
     </div>
   );
 }

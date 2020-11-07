@@ -45,14 +45,16 @@ module.exports = {
     })(req, res, next);
   },
   findUserData: function (req, res) {
-    console.log("finding user data")
+
+    console.log("finding user data");
     passport.authenticate("local", (err, user, info) => {
-      console.log("req.user", req.user)
-      res.send(req.user)
+      console.log("req.user", req.user);
+      res.send(req.user);
       // db.User.findOne({ username: req.user.username }, async (err, doc, res) => {
       //   console.log("userRes", res)
       // });
-    })(req, res,);
+    })(req, res);
+
   },
 
   logout: function (req, res) {
