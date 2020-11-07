@@ -44,7 +44,7 @@ function Signup() {
   return (
     <div className = "ui container fluid">
       <NavbarNoLinks/>
-      <div className="credForm">
+      <div className="credFormS">
       <form className="ui form ">
         <div className="field">
           <label>First Name</label>

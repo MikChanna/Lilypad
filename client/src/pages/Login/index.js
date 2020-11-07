@@ -45,7 +45,7 @@ function Login () {
       <form className = "ui form">
           <div className = "field">
               <label>Username</label>
-              <input  onChange={handleInputChange}type = "text" name="username" placeholder = "uesrname" id="username" />
+              <input  onChange={handleInputChange}type = "text" name="username" placeholder = "username" id="username" />
           </div>
           <div className = "field">
               <label>Password</label>

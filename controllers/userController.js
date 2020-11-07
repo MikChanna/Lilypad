@@ -34,7 +34,7 @@ module.exports = {
     console.log("reqbody:login", req.body);
     passport.authenticate("local", (err, user, info) => {
       if (err) throw err;
-      if (!user) res.send("No User Exists");
+      if (!user) res.send("Wrong username or password");
       else {
         req.logIn(user, (err) => {
           if (err) throw err;
@@ -46,11 +46,13 @@ module.exports = {
   },
   findUserData: function (req, res) {
     console.log("finding user data")
-    if (!req.user) {
-      res.json({});
-    } else {
-      res.send(req.user);
-    }
+    passport.authenticate("local", (err, user, info) => {
+      console.log("req.user", req.user)
+      res.send(req.user)
+      // db.User.findOne({ username: req.user.username }, async (err, doc, res) => {
+      //   console.log("userRes", res)
+      // });
+    })(req, res,);
   },
 
   logout: function (req, res) {
