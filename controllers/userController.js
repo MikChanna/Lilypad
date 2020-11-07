@@ -1,14 +1,19 @@
 const passport = require("passport");
 const bcrypt = require("bcryptjs");
 const db = require("../models");
+require("../config/passport")(passport);
 
 // Defining methods for the userController
 module.exports = {
   createUser: function (req, res) {
     console.log("reqbody:signup", req.body);
     db.User.findOne({ username: req.body.username }, async (err, doc) => {
-      if (err) throw err;
-      if (doc) res.send("User Already Exists");
+      if (err) {
+        throw err;
+      }
+      if (doc) {
+        res.send("User Already Exists");
+      }
       if (!doc) {
         const hashedPassword = await bcrypt.hash(req.body.password, 10);
 

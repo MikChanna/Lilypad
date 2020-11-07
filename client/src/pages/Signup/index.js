@@ -23,7 +23,7 @@ function Signup() {
       phoneNumber: userObject.phoneNumber,
       withCredentials: true,
     }).then((res) => {
-      console.log("user created", res);
+      console.log("res", res);
       if(res.data === "User Already Exists"){
         alert("User already exists")
       }else{

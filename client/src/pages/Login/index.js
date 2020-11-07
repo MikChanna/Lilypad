@@ -18,8 +18,16 @@ function Login () {
         password: loginUser.password,
         withCredentials: true,
     }).then((res) => {
-      console.log(res)
-      window.location.replace("/home")}
+      console.log("res", res);
+      if(res.data === "No User Exists"){
+        alert("No User Exists, try again")
+      }else{
+        window.location.replace("/home");
+        
+        
+      }
+    }
+
     )
   };
     

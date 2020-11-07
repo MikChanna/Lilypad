@@ -51,7 +51,6 @@ app.use(
 app.use(cookieParser("secretcode"));
 app.use(passport.initialize());
 app.use(passport.session());
-require("./config/passport")(passport);
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
