@@ -41,7 +41,9 @@ function Gallery() {
     xhr.onreadystatechange = () => {
       if (xhr.readyState === 4) {
         if (xhr.status === 200) {
+          console.log(JSON.parse(xhr.responseText));
           response = JSON.parse(xhr.responseText);
+          console.log(response);
           uploadFile(file, response.signedRequest, response.url);
         } else {
           alert("Could not get signed URL.");
