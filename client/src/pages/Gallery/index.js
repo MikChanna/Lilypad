@@ -93,6 +93,7 @@ function Gallery() {
 
       <form>
         <input type="file" id="file-input" />
+        <br />
         <button className="ui button signup" type="submit">
           Add!
         </button>
