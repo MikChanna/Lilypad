@@ -90,6 +90,10 @@ app.get("/sign-s3", (req, res) => {
   });
 });
 
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '/client/build/index.html'));
+});
+
 app.post("/save-details", (req, res) => {
   // TODO: Read POSTed form data and do something useful
 });
