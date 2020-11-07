@@ -19,8 +19,8 @@ function Login () {
         withCredentials: true,
     }).then((res) => {
       console.log("res", res);
-      if(res.data === "No User Exists"){
-        alert("No User Exists, try again")
+      if(res.data === "Wrong username or password"){
+        alert("Wrong username or password, try again")
       }else{
         window.location.replace("/home");
         
