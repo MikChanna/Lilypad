@@ -1,4 +1,5 @@
 import React from "react";
+import "./style.css";
 
 export default class Searchbar extends React.Component {
   state = {
@@ -19,7 +20,7 @@ export default class Searchbar extends React.Component {
   render() {
     return (
       <div className="search-bar ui segment">
-        <form onSubmit={this.handleSubmit} className="ui form">
+        <form onSubmit={this.handleSubmit} className="ui form searchbar">
           <div className="field">
             <label htmlFor="video-search">Search below:</label>
             <input
