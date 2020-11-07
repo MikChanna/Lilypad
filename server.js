@@ -5,10 +5,10 @@ const PORT = process.env.PORT || 3001;
 require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
-var bodyParser = require("body-parser");
-const cors = require("cors");
-var passport = require("passport");
-var path = require("path");
+const bodyParser = require("body-parser");
+// const cors = require("cors");
+const passport = require("passport");
+const path = require("path");
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
 
@@ -34,12 +34,12 @@ mongoose.connect(
 // middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(
-  cors({
-    origin: __dirname, // <-- location of the react app were connecting to
-    credentials: true,
-  })
-);
+// app.use(
+//   cors({
+//     origin: "http://localhost:3000", // <-- location of the react app were connecting to
+//     credentials: true,
+//   })
+// );
 app.use(
   session({
     secret: "secretcode",
@@ -51,7 +51,6 @@ app.use(
 app.use(cookieParser("secretcode"));
 app.use(passport.initialize());
 app.use(passport.session());
-require("./config/passport")(passport);
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));

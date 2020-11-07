@@ -23,9 +23,16 @@ function Signup() {
       phoneNumber: userObject.phoneNumber,
       withCredentials: true,
     }).then((res) => {
-      console.log("user created");
-      window.location.replace("/");
-    });
+      console.log("res", res);
+      if(res.data === "User Already Exists"){
+        alert("User already exists")
+      }else{
+        window.location.replace("/");
+        res.send("Create account successful!")
+        
+      }
+      
+    })
   };
 
   function handleInputChange(event) {
@@ -37,7 +44,7 @@ function Signup() {
   return (
     <div className = "ui container fluid">
       <NavbarNoLinks/>
-      <div className="credForm">
+      <div className="credFormS">
       <form className="ui form ">
         <div className="field">
           <label>First Name</label>

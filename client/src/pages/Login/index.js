@@ -18,8 +18,16 @@ function Login () {
         password: loginUser.password,
         withCredentials: true,
     }).then((res) => {
-      console.log(res)
-      window.location.replace("/home")}
+      console.log("res", res);
+      if(res.data === "Wrong username or password"){
+        alert("Wrong username or password, try again")
+      }else{
+        window.location.replace("/home");
+        
+        
+      }
+    }
+
     )
   };
     
@@ -37,7 +45,7 @@ function Login () {
       <form className = "ui form">
           <div className = "field">
               <label>Username</label>
-              <input  onChange={handleInputChange}type = "text" name="username" placeholder = "uesrname" id="username" />
+              <input  onChange={handleInputChange}type = "text" name="username" placeholder = "username" id="username" />
           </div>
           <div className = "field">
               <label>Password</label>
