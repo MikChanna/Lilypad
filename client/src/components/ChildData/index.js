@@ -19,7 +19,9 @@ function ChildData() {
   function loadChildData() {
     API.getChildren()
 
-      .then((res) => setChildData(res.data))
+      .then((res) => {
+        console.log("res.data",res.data);
+        setChildData(res.data)})
 
       .catch((err) => console.log(err));
   }

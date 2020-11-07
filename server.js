@@ -61,6 +61,9 @@ app.use(express.static(path.join(__dirname, "/client/public")));
 
 // add routes
 app.use(routes);
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '/client/build/index.html'));
+});
 
 app.get("/sign-s3", (req, res) => {
   console.log("hit GET route");

@@ -72,7 +72,7 @@ function Gallery() {
   function getAllImages() {
     API.getImages()
       .then((res) => {
-        console.log(res);
+        console.log("gallery res", res);
         setImages(res);
       })
       .catch((err) => {
