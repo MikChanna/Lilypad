@@ -5,8 +5,6 @@ import ImageItem from "../ImageItem";
 function Images({ images }) {
   const [imageData, setImageData] = useState([]);
   console.log(images);
-
-  // loads child information and stores them with setChildData
   useEffect(() => {
     loadImageData();
   }, []);
