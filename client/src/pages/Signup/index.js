@@ -24,6 +24,7 @@ function Signup() {
       withCredentials: true,
     }).then((res) => {
       console.log("res", res);
+
       if (res.data === "User Already Exists") {
         alert("User already exists");
       } else {
@@ -31,6 +32,7 @@ function Signup() {
         res.send("Create account successful!");
       }
     });
+
   };
 
   function handleInputChange(event) {
@@ -40,6 +42,7 @@ function Signup() {
   }
 
   return (
+
     <div className="ui container fluid">
       <NavbarNoLinks />
       <div className="credFormS">
@@ -103,6 +106,7 @@ function Signup() {
           Or log in <a href="/login">here</a>
         </p>
       </div>
+
     </div>
   );
 }

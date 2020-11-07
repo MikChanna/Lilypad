@@ -88,12 +88,13 @@ function Gallery() {
       <form method="POST" action="/save-details">
         <input type="hidden" id="avatar-url" name="avatar-url" />
       </form>
-      <h5 id="status">Add more images:</h5>
+      <h3 id="status">Add more images:</h3>
 
       <img id="preview" src={defaultimage} alt="" />
 
       <form>
         <input type="file" id="file-input" />
+        <br />
         <button className="ui button signup" type="submit">
           Add!
         </button>

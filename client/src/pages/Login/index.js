@@ -18,12 +18,15 @@ function Login() {
       withCredentials: true,
     }).then((res) => {
       console.log("res", res);
+
       if (res.data === "Wrong username or password") {
         alert("Wrong username or password, try again");
       } else {
         window.location.replace("/home");
       }
     });
+
+     
   };
 
   function handleInputChange(event) {
@@ -31,6 +34,7 @@ function Login() {
 
     setloginUser({ ...loginUser, [name]: value });
   }
+
 
   return (
     <div className="ui container fluid">
@@ -46,6 +50,11 @@ function Login() {
               placeholder="username"
               id="username"
             />
+
+
+
+  
+
           </div>
           <div className="field">
             <label>Password</label>

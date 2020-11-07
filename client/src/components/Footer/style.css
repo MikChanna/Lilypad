@@ -5,7 +5,7 @@
 }
 
 @media (min-height: 320px) {
-  .footer {
+  footer {
     /* Increased specificity for SO snippet priority */
     position: absolute;
     bottom: 0;

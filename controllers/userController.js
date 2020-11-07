@@ -45,6 +45,7 @@ module.exports = {
     })(req, res, next);
   },
   findUserData: function (req, res) {
+
     console.log("finding user data");
     passport.authenticate("local", (err, user, info) => {
       console.log("req.user", req.user);
@@ -53,6 +54,7 @@ module.exports = {
       //   console.log("userRes", res)
       // });
     })(req, res);
+
   },
 
   logout: function (req, res) {
