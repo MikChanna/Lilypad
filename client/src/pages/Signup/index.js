@@ -23,10 +23,16 @@ function Signup() {
       phoneNumber: userObject.phoneNumber,
       withCredentials: true,
     }).then((res) => {
-      console.log("user created");
-      window.location.replace("/");
-    });
- 
+      console.log("user created", res);
+      if(res.data === "User Already Exists"){
+        alert("User already exists")
+      }else{
+        window.location.replace("/");
+        res.send("Create account successful!")
+        
+      }
+      
+    })
   };
 
   function handleInputChange(event) {

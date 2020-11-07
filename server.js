@@ -5,10 +5,10 @@ const PORT = process.env.PORT || 3001;
 require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
-var bodyParser = require("body-parser");
+const bodyParser = require("body-parser");
 const cors = require("cors");
-var passport = require("passport");
-var path = require("path");
+const passport = require("passport");
+const path = require("path");
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
 

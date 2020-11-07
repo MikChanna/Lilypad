@@ -22,7 +22,6 @@ module.exports = {
         await newUser.save();
         console.log("User Created");
         res.status(200).end();
-        // res.redirect(307, "/api/login");
       }
     });
   },
