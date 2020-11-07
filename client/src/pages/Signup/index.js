@@ -26,6 +26,7 @@ function Signup() {
       console.log("user created");
       window.location.replace("/");
     });
+ 
   };
 
   function handleInputChange(event) {
