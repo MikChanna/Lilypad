@@ -1,10 +1,10 @@
 import React from "react";
+import "./style.css";
 var avatarDirectory = process.env.PUBLIC_URL + "/assets/images/";
 
 function ChildItem({ data }) {
   let formattedBirthday = data.birthDate.slice(1, 6);
   console.log(formattedBirthday);
-
 
   return (
     <div className="ui card childCard green">
@@ -43,7 +43,6 @@ function ChildItem({ data }) {
               <div className="header">Favorite activity</div>
               {data.favoriteActivity}
             </div>
-      
           </div>
         </div>
       </div>
