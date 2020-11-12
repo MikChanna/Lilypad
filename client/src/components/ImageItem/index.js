@@ -1,4 +1,5 @@
 import React from "react";
+import "./style.css";
 
 function ImageItem({ data }) {
   const removePhoto = (id) => {
@@ -9,9 +10,12 @@ function ImageItem({ data }) {
   return (
     <div className="image centered">
       <img src={data.url} alt="avatar" />
-      <span onClick={() => removePhoto(data._id)} className="remove">
-        Remove
-      </span>
+      <button
+        className="ui button red remove"
+        onClick={() => removePhoto(data._id)}
+      >
+        ✗
+      </button>
     </div>
   );
 }
