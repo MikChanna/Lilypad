@@ -9,9 +9,12 @@ import Login from "./pages/Login";
 import AddChild from "./pages/AddChild";
 import EditChild from "./pages/EditChild";
 import Footer from "./components/Footer";
+import childContext from "./utils/childContext";
 
 function App() {
 
+  const [childObject, setChildObject] = useState({ childContext });
+  
 
   return (
     <div className="App">

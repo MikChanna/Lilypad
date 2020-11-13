@@ -43,7 +43,7 @@ function ChildItem({ data }) {
               <div className="header">Favorite activity</div>
               {data.favoriteActivity}
             </div>
-      
+            <button value = {data._id}>Edit</button>
           </div>
         </div>
       </div>
