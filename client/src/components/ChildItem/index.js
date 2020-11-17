@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"
 var avatarDirectory = process.env.PUBLIC_URL + "/assets/images/";
 
 function ChildItem({ data }) {
@@ -43,7 +44,7 @@ function ChildItem({ data }) {
               <div className="header">Favorite activity</div>
               {data.favoriteActivity}
             </div>
-            <button value = {data._id}>Edit</button>
+            <Link to = {"/child/" + data._id}>Edit</Link>
           </div>
         </div>
       </div>

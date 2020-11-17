@@ -6,9 +6,12 @@ export default {
     return axios.post("/api/child", childData);
   },
   getChild: function (id) {
-    return axios.get("/api/child" + id);
+    return axios.get("/api/child/" + id);
   },
   getChildren: function (childData) {
     return axios.get("/api/child", childData);
+  },
+  updateChild: function (id, editData) {
+    return axios.put("/api/child/" + id, editData);
   },
 };

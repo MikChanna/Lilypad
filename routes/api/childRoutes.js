@@ -10,6 +10,7 @@ router
 // Matches with "/api/child/:id"
 router
   .route("/:id")
+  .get(childController.findById)
   .put(childController.update);
 
 

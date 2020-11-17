@@ -2,28 +2,15 @@ import React, { useState, useEffect } from "react";
 import API from "../../utils/ChildAPI";
 import "./style.css";
 import moment from "moment";
+import {useParams} from "react-router-dom";
 import Navbar from "../../components/Navbar"
-import EditChildItem from "../../components/EditChildItem";
+
 
 var avatarDirectory = process.env.PUBLIC_URL + "/assets/images/";
 
 function EditChild() {
 
-  const [editChildData, setEditChildData] = useState([]);
-
-  useEffect(() => {
-    loadChildData();
-  }, []);
-
-  function loadChildData() {
-    API.getChildren()
-
-      .then((res) => setEditChildData(res.data))
-
-      .catch((err) => console.log(err));
-  }
-  
-  const [childObject, setChildObject] = useState({
+  const [oneChildData, setOneChildData] = useState({    
     firstName: "",
     month: "",
     day: "",
@@ -33,20 +20,49 @@ function EditChild() {
     favoriteFood: "",
     favoriteActivity: "",
     image: "",
+    id: ""
   });
+  
+  const {id} = useParams();
+
+  useEffect(() => {
+    API.getChild(id)
+    .then((res) => {
+      setOneChildData(res.data)
+    })
+  })
+  
+  const [childObject, setChildObject] = useState({    
+    firstName: "",
+    month: "",
+    day: "",
+    year: "",
+    allergies: "",
+    bedtime: "",
+    favoriteFood: "",
+    favoriteActivity: "",
+    image: "",
+    id: ""
+  });
+
   const [radio, setRadio] = useState("boy_blondhair.png");
+
 
   function handleInputChange(event) {
     const { name, value } = event.target;
 
-    setChildObject({ ...childObject, [name]: value });
+    setChildObject({...childObject, [name]: value });
   }
 
-  function createChild(event) {
+  function update(event) {
     event.preventDefault();
-    console.log("save button clicked");
+    console.log("update button clicked");
+    console.log("id", id);
 
-    API.saveChild({
+    API.updateChild(
+      id,
+      { $set: 
+      {
       firstName: childObject.firstName,
       birthDate: JSON.stringify(childObject.month + "/" + childObject.day),
       age: moment(
@@ -60,25 +76,23 @@ function EditChild() {
       favoriteFood: childObject.favoriteFood,
       favoriteActivity: childObject.favoriteActivity,
       image: radio,
-    })
+    }
+  })
       // go back to homepage after adding child
-      .then(function () {
-        window.location.replace("/home");
+      .then(function (res) {
+        console.log("childObject", childObject)
+        // window.location.replace("/home");
       })
       .catch((err) => console.log(err));
   }
+  
   return (
     <div className = "ui container fluid">
       <Navbar/>
     <div>
-      <h1> Please select a child to edit</h1>
+      <h1> You are now editing {oneChildData.firstName}'s profile</h1>
       <div className = "ui link stackable centered">
-    
-        <div className="ui five column grid centered editChildCard">
-            {editChildData.map((data) => ( 
-          <EditChildItem key={data._id} data = {data}/>
-           ))}
-        </div>
+
           
 
 
@@ -86,11 +100,11 @@ function EditChild() {
         <div className="field">
           <label>First Name</label>
           <input
-            onChange={handleInputChange}
-            value={childObject.firstName}
             type="text"
             name="firstName"
-            placeholder="First Name"
+            value={childObject.firstName}
+            onChange={handleInputChange}
+            placeholder = {oneChildData.firstName}
           />
         </div>
         <div className="field">
@@ -230,7 +244,7 @@ function EditChild() {
               type="text"
               name="year"
               maxLength="4"
-              placeholder="Year"
+              placeholder="year"
             ></input>
           </div>
         </div>
@@ -242,7 +256,7 @@ function EditChild() {
             value={childObject.allergies}
             type="text"
             name="allergies"
-            placeholder="Allergy Type"
+            placeholder={oneChildData.allergies}
           />
         </div>
         <div className="field">
@@ -252,7 +266,7 @@ function EditChild() {
             value={childObject.bedtime}
             type="text"
             name="bedtime"
-            placeholder="9:00pm"
+            placeholder={oneChildData.bedtime}
           />
         </div>
         <div className="field">
@@ -262,7 +276,7 @@ function EditChild() {
             value={childObject.favoriteFood}
             type="text"
             name="favoriteFood"
-            placeholder="Name of Favorite Food"
+            placeholder={oneChildData.favoriteFood}
           />
         </div>
         <div className="field">
@@ -272,12 +286,12 @@ function EditChild() {
             value={childObject.favoriteActivity}
             type="text"
             name="favoriteActivity"
-            placeholder="Name of Favorite Activity"
+            placeholder={oneChildData.favoriteActivity}
           />
         </div>
 
-        <button onClick={createChild} className="ui button" type="submit">
-          Save Data
+        <button onClick={update} className="ui button" type="submit">
+          Update
         </button>
        
       </form>

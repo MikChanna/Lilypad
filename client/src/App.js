@@ -9,11 +9,11 @@ import Login from "./pages/Login";
 import AddChild from "./pages/AddChild";
 import EditChild from "./pages/EditChild";
 import Footer from "./components/Footer";
-import childContext from "./utils/childContext";
+
 
 function App() {
 
-  const [childObject, setChildObject] = useState({ childContext });
+
   
 
   return (
@@ -26,7 +26,7 @@ function App() {
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/" component={Login} />
           <Route exact path="/addchild" component={AddChild} />
-          <Route exact path="/editchild" component={EditChild} />
+          <Route exact path="/child/:id" component={EditChild} />
         <Footer />
       </Router>
     </div>
