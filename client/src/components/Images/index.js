@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import API from "../../utils/ImagesAPI";
 import ImageItem from "../ImageItem";
+import DeleteBtn from "../DeleteBtn";
 
 function Images({ images }) {
   const [imageData, setImageData] = useState([]);
@@ -19,10 +20,20 @@ function Images({ images }) {
       .catch((err) => console.log(err));
   }
 
+  // Deletes a book from the database with a given id, then reloads books from the db
+  function deleteImage(id) {
+    API.deleteImage(id)
+      .then((res) => loadImageData())
+      .catch((err) => console.log(err));
+  }
+
   return (
     <div className="ui medium images">
       {imageData.map((image) => (
-        <ImageItem key={image._id} data={image} />
+        <div>
+          <ImageItem key={image._id} data={image} />
+          <DeleteBtn onClick={() => deleteImage(image._id)} />
+        </div>
       ))}
     </div>
   );
