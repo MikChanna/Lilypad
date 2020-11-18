@@ -1,12 +1,11 @@
 import React from "react";
 import "./style.css";
-// import DeleteBtn from "../DeleteBtn";
-// import API from "../../utils/ImagesAPI";
 
-function ImageItem({ data }) {
+function ImageItem(props) {
+  console.log(props);
   return (
-    <div className="image centered">
-      <img src={data.url} alt="avatar" />
+    <div className="image">
+      <img src={props.data.url} alt="avatar" />
     </div>
   );
 }

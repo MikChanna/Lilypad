@@ -30,10 +30,10 @@ function Images({ images }) {
   return (
     <div className="ui medium images">
       {imageData.map((image) => (
-        <div>
+        <span>
           <ImageItem key={image._id} data={image} />
           <DeleteBtn onClick={() => deleteImage(image._id)} />
-        </div>
+        </span>
       ))}
     </div>
   );
