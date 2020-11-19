@@ -34,3 +34,21 @@ h1 {
   margin-left: 20px;
   width: 200px;
 }
+
+@media only screen and (max-width: 767px) {
+  .ui.card.childCard.green {
+    margin-right: 40px;
+  }
+}
+
+.ui.cards a.card:hover,
+.ui.link.card:hover,
+.ui.link.cards .card:hover,
+a.ui.card:hover {
+  cursor: auto;
+}
+
+/* .delete-btn {
+  float: right;
+  color: #e74944;
+} */

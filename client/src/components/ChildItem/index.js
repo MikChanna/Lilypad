@@ -1,11 +1,14 @@
 import React from "react";
+<<<<<<< HEAD
 import { Link } from "react-router-dom"
+=======
+import "./style.css";
+>>>>>>> main
 var avatarDirectory = process.env.PUBLIC_URL + "/assets/images/";
 
 function ChildItem({ data }) {
   let formattedBirthday = data.birthDate.slice(1, 6);
   console.log(formattedBirthday);
-
 
   return (
     <div className="ui card childCard green">
@@ -44,7 +47,10 @@ function ChildItem({ data }) {
               <div className="header">Favorite activity</div>
               {data.favoriteActivity}
             </div>
+<<<<<<< HEAD
             <Link to = {"/child/" + data._id}>Edit</Link>
+=======
+>>>>>>> main
           </div>
         </div>
       </div>
