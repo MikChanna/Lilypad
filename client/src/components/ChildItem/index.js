@@ -1,9 +1,8 @@
 import React from "react";
-<<<<<<< HEAD
 import { Link } from "react-router-dom"
-=======
+
 import "./style.css";
->>>>>>> main
+
 var avatarDirectory = process.env.PUBLIC_URL + "/assets/images/";
 
 function ChildItem({ data }) {
@@ -47,10 +46,8 @@ function ChildItem({ data }) {
               <div className="header">Favorite activity</div>
               {data.favoriteActivity}
             </div>
-<<<<<<< HEAD
             <Link to = {"/child/" + data._id}>Edit</Link>
-=======
->>>>>>> main
+
           </div>
         </div>
       </div>
