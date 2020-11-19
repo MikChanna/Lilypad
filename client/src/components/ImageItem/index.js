@@ -1,12 +1,12 @@
 import React from "react";
+import "./style.css";
 
-function ImageItem({ data }) {
+function ImageItem(props) {
+  console.log(props);
   return (
-    // <div className="ui card green">
-    <div className="image centered">
-      <img src={data.url} alt="avatar" />
+    <div className="image">
+      <img src={props.data.url} alt="avatar" />
     </div>
-    // </div>
   );
 }
 

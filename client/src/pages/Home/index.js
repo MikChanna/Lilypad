@@ -7,7 +7,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <Navbar/>
+        <Navbar />
         <ChildData />
         <SeasonalVids />
       </div>
