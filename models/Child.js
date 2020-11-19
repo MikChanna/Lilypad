@@ -30,7 +30,8 @@ const ChildSchema = Schema({
   },
   image:{
     type: String,
-  }
+  },
+ 
 });
 
 const Child = mongoose.model("Child", ChildSchema);

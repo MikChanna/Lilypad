@@ -26,10 +26,10 @@ function ChildData() {
       .catch((err) => console.log(err));
   }
 
-  function loadUserData() {
+  function loadUserData(doc) {
     userAPI.getUser()
 
-      .then((res) => console.log(res))
+      .then((res) => console.log("res",res.data))
 
       .catch((err) => console.log(err));
   }

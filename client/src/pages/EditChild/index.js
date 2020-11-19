@@ -81,7 +81,7 @@ function EditChild() {
       // go back to homepage after adding child
       .then(function (res) {
         console.log("childObject", childObject)
-        // window.location.replace("/home");
+        window.location.replace("/home");
       })
       .catch((err) => console.log(err));
   }

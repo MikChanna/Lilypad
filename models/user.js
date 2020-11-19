@@ -16,7 +16,8 @@ var User = new Schema({
     },
     phoneNumber:{
         type:String
-    }
+    },
+
 });
 
 
