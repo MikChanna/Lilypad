@@ -50,9 +50,9 @@ module.exports = {
     passport.authenticate("local", (err, user, info) => {
       console.log("req.user", req.user);
       res.send(req.user);
-      db.User.findOne({ username: req.user.username }, async (err, doc, res) => {
-        console.log("userRes", doc)
-      });
+      // db.User.findOne({ username: req.user.username }, async (err, doc, res) => {
+      //   console.log("userRes", doc)
+      // });
     })(req, res);
 
   },
