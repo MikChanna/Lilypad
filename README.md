@@ -10,7 +10,19 @@ Users can store information about each of their children, inluding: allergies, b
 
 Lilypad also includes an interface which parents and caregivers can use to chat and interact if issues or questions arise, as well as browse child-related content if they want to search for fun games to play, look up age-appropriate media, etc.
 
-A live application can be found at: nameless-ocean-53167.herokuapp.com
+A live application can be found at: https://enigmatic-tor-25137.herokuapp.com/
+
+Home page: <img src = "client/public/assets/images/homepage.png">
+
+AddChild: <img src = "client/public/assets/images/addchild.png">
+
+Browse: <img src = "client/public/assets/images/browsepage.png">
+
+Gallery: <img src = "client/public/assets/images/gallerypage.png">
+
+# Technologies used
+
+React, AWS, Google APIs, MongoDB, Mongoose, Semantic UI, Express, Node, Passport, Moment.js, Heroku
 
 # Usage
 
